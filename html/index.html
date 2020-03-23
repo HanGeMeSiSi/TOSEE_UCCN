@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>特西德官网</title>   
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/animate.min.css">
+    <link rel="stylesheet" href="../static/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- 头的部分 -->
+    <div class="header_div row clear" id="header_div">
+        <div class="float-left">
+            <div class="logo">
+                <img src="../static/img/logo.jpg" alt="">
+            </div>
+        </div>
+        <div class="sm-menu-item">
+            <div class="shade"></div>
+            <div class="left-menu">
+                <div class="close-menu">x</div>
+                
+            </div>
+        </div>
+        <div class="float-right h-100 lg-menu-item">
+            <div class="icon-viewlist iconfont btn-menu active" id="btn-menu"></div>
+            <div class="menu mr-3">
+               
+            </div>
+        </div>
+    </div>
+    <div class="container clear">
+
+    </div>
+    <script>
+        let menu_data = [
+            {
+                firstName:"首页",
+                children:[],
+                url:""
+            },
+            {
+                firstName:"产品中心",
+                children:[
+                    {
+                        name:"新品介绍",
+                        url:""
+                    },{
+                        name:"智能集中控制器",
+                        url:""
+                    },{
+                        name:"智能空开",
+                        url:""
+                    },{
+                        name:"智能断路器",
+                        url:""
+                    },{
+                        name:"智能电箱",
+                        url:""
+                    },{
+                        name:"智能用电管理系统",
+                        url:""
+                    },{
+                        name:"智能用电检测仪",
+                        url:""
+                    }
+                ]
+            },
+            {
+                firstName:"招商加盟",
+                children:[],
+                url:""
+            },
+            {
+                firstName:"工程案例",
+                children:[
+                    {
+                        name:"成功案例项目",
+                        url:""
+                    }
+                ]
+            },
+            {
+                firstName:"服务支持",
+                children:[
+                    {
+                        name:"安装指导",
+                        url:""
+                    },
+                    {
+                        name:"售后服务",
+                        url:""
+                    },
+                    {
+                        name:"下载资料",
+                        url:""
+                    }
+                ]
+            },
+            {
+                firstName:"新闻资讯",
+                children:[
+                    {
+                        name:"公司新闻",
+                        url:""
+                    },
+                    {
+                        name:"政策法规",
+                        url:""
+                    },
+                    {
+                        name:"行业资讯",
+                        url:""
+                    }
+                ]
+            },
+            {
+                firstName:"公司简介",
+                children:[
+                    {
+                        name:"企业简介",
+                        url:""
+                    },
+                    {
+                        name:"招商计划",
+                        url:""
+                    },
+                    {
+                        name:"人员招聘",
+                        url:""
+                    },
+                    {
+                        name:"联系我们",
+                        url:""
+                    }
+                ]
+            },
+            {
+                firstName:"联系我们",
+                children:[],
+                url:""
+            },
+        ];
+        
+     
+        let newLeftMenu="";
+        let newLGMenu="";
+        for(let i =0;i<menu_data.length;i++){
+            let firstName =menu_data[i].firstName;
+            let firstUrl =menu_data[i].url;
+            let childMenu = "";
+            let childMenu2="";
+            for(let k =0;k<menu_data[i].children.length;k++){
+                let newChildrenName = menu_data[i].children[k].name;
+                let newChildrenUrl = menu_data[i].children[k].url;
+                childMenu += `<div class="left-menu-link" data-url="${newChildrenUrl}">${newChildrenName}</div>`;
+                childMenu2 += `<div class="menu-item-tanChu-link" data-url="${newChildrenUrl}">${newChildrenName}</div>`;
+            }
+            let pianduan =`
+                <div class="left-menu-item">
+                    <div class="left-menu-title" data-url="${firstUrl}">
+                        ${firstName}
+                        <div class="icon-arrow-down iconfont"></div>
+                    </div>
+                    <div class="left-menu-child">
+                        ${childMenu}
+                    </div>
+                </div>
+            `;
+            let pianduan2 =`
+                <div class="menu-item">
+                    <div class="menu-item-title" data-url="${firstUrl}">
+                        ${firstName}
+                    </div>
+                    <div class="menu-item-tanChu">
+                        ${childMenu2}
+                    </div>
+                </div>
+            `;
+            newLeftMenu+=pianduan;
+            newLGMenu+=pianduan2;
+        }
+        $(".lg-menu-item .menu").html(newLGMenu);
+        $(".sm-menu-item .left-menu").html(newLeftMenu);
+        $("#btn-menu").click(()=>{
+            $(".sm-menu-item").addClass("active");
+        });
+        
+        $(".sm-menu-item .close-menu").click(()=>{
+            $(".sm-menu-item").removeClass("active");
+        });
+        $(".sm-menu-item .shade").click(()=>{
+            $(".sm-menu-item").removeClass("active");
+        });
+        $(".left-menu-item").click((e)=>{
+            var all_item = $(".left-menu-item");
+            if($(e.target).hasClass("left-menu-link") || $(e.target).hasClass("left-menu-child")){
+                return;
+            }
+            // console.log($(e.target).closest(".left-menu-item"));
+            var _this =$(e.target).closest(".left-menu-item");
+            if(_this.hasClass("active")){
+                _this.removeClass("active");
+                _this.find(".left-menu-child").css({
+                    height:0
+                })
+            }else{
+                // console.log($(_this))
+                for(let i =0;i<all_item.length;i++){
+                    let now_item = $(all_item[i]);
+                    if($(now_item)[0] != _this[0]){
+                        now_item.removeClass("active");
+                        now_item.find(".left-menu-child").css({
+                            height:0
+                        });
+                        // console.log($(now_item))
+                        // console.log(222)                       
+                    }
+                }
+                _this.addClass("active");
+                _this.find(".left-menu-child").css({
+                    height: _this.find(".left-menu-child .left-menu-link").length*30+'px'
+                })
+            }
+        });
+    </script>
+</body>
+</html>
