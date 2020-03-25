@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo ($seo_title); ?>-<?php echo ($site_name); ?></title> 
 <meta name="keywords" content="<?php if($seo_keywords=='') : echo ($seo_title); else : echo ($seo_keywords); endif;?>" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
 <meta name="description" content="<?php echo ($seo_description); ?>" />
 <meta name="baidu-site-verification" content="57egBW5jZG" />
 <link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
@@ -13,7 +14,7 @@
 <link rel="stylesheet" href="/static/css/animate.min.css">
 <link rel="stylesheet" href="/static/iconfont/iconfont.css">
 <link rel="stylesheet" href="/static/css/yh/main.css">
-<link rel="stylesheet" href="/static/css/header.css">
+<link rel="stylesheet" href="/static/css/header.css?v1.0.0">
 <link rel="stylesheet" href="/static/layui/css/layui.css">
 <script src="/static/layui/layui.js"></script>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
@@ -210,19 +211,20 @@
     $(document).ready(()=>{
         let pathname = window.location.pathname; 
         let menu_items = $(".menu .menu-item");
+        let titleName = $(menu_items[menu_items.length-1]).find(".menu-item-title").text();
+        titleName = titleName.replace(/\s*/g,"");
+        // console.log(titleName)
+        if(titleName === "联系我们"){
+            $(menu_items[menu_items.length-1]).attr("title","4008897913").css({position:"relative"}).append(
+                `<div class="lianxi_tanchu">
+                    <img src="/static/picture/1515132262343080_1.png"/>
+                    <span>4008897913</span>
+                </div>`
+            );
+        }
         menu_item_active();
         function menu_item_active(){
             for(let i = 0;i<menu_items.length;i++){
-                let titleName = $(menu_items[i]).find(".menu-item-title").text();
-                titleName = titleName.replace(/\s*/g,"");
-                if(titleName === "联系我们"){
-                    $(menu_items[i]).attr("title","4008897913").css({position:"relative"}).append(
-                        `<div class="lianxi_tanchu">
-                            <img src="/static/picture/1515132262343080_1.png"/>
-                            <span>4008897913</span>
-                        </div>`
-                    );
-                }
                 let i_title = $(menu_items[i]).find(".menu-item-title").data("url");
                 let i_link = $(menu_items[i]).find(".menu-item-tanChu .menu-item-tanChu-link");
             
@@ -339,16 +341,21 @@
         $(".menu-item-title").click((e)=>{
             window.location.href = $(e.target).data().url;
         });
-        $(".left-menu-title").dblclick((e)=>{
-        window.location.href = $(e.target).data().url;
+        $(".left-menu-title").click((e)=>{
+            let _this = $(e.target);
+            // console.log();
+            let isActive = _this.closest(".left-menu-item").hasClass("active");
+            if(isActive){
+                window.location.href = $(e.target).data().url;
+            }
         });
         $(".left-menu-child").click((e)=>{
-        window.location.href = $(e.target).data().url;
+            window.location.href = $(e.target).data().url;
         });
     });
   })()
 </script>
-<div style="height: 65px;"></div>
+<div class="top_zhanwei"></div>
 
 
 		<!-- 内页banner -->
@@ -469,11 +476,6 @@ $(function(){
 
  
  
-<!-- <style>
-.footnei li{overflow: hidden;
-    line-height: 30px;
-    height: 30px;}
-</style>
 <div class="foot">
   <div class="footer clearfix">
     <div class="fl footOne">
@@ -489,11 +491,10 @@ $(function(){
       <p><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 24px;"><strong>新闻中心</strong></span></p>
       <ul class="footnei">
 	  	<?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1 ")->order("updatetime desc,id desc")->limit("4")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><li><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></li><?php endforeach; endif;?>
-        
       </ul>
     </div>
     <div class="fr erwei">
-      <p><img src="/static/picture/1543485366826110_1.jpg" title="特西电气" alt="特西电气" width="219" height="220" style="width: 219px; height: 220px;" border="0" vspace="0"/></p>
+      <p><img src="/static/picture/1543485366826110_1.jpg" title="特西电气" alt="特西电气" width="219" height="220" style="width: 219px; height: 220px;" vspace="0"/></p>
     </div>
   </div>
 </div>
@@ -505,15 +506,13 @@ $(function(){
     </div>
      
   </div>
-</div> -->
+</div>
   
 <!--底部JS加载区域-->
 <script type="text/javascript" src="/static/js/common_1.js"></script>
 <script type="text/javascript" src="/static/js/message_1.js"></script>
-<script>
-    bb1(); //首页banner切换
-    </script>
-</body></html>
+</body>
+</html>
 
 
 

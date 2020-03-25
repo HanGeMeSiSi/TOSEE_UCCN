@@ -65,7 +65,7 @@
 }
 .menu .menu-item .menu-item-tanChu .menu-item-tanChu-link{
     transition: all 0.2s linear;
-    padding: 2px 5px;
+    padding: 2px 10px;
     border-radius: 3px;
     height: 30px;
     line-height: 30px;
@@ -224,26 +224,6 @@
     display: block;
 }
 
-
-.footnei li{
-    overflow: hidden;
-    line-height: 30px;
-    height: 30px;
-}
-.foot .footer{
-    height: 300px;
-}
-.footer .footTwo{
-    margin-left: 40px;
-    width: 400px;
-    height: 100%;
-}
-.footer .footOne{
-    height: 100%;
-}
-.foot,.foot2{
-    width: 100% !important;
-}
 /* ********************************** */
 
 /* 小 */

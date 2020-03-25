@@ -14,8 +14,9 @@
 <link rel="stylesheet" href="/static/css/animate.min.css">
 <link rel="stylesheet" href="/static/iconfont/iconfont.css">
 <link rel="stylesheet" href="/static/css/yh/main.css">
-<link rel="stylesheet" href="/static/css/header.css">
+<link rel="stylesheet" href="/static/css/header.css?v1.0.1">
 <link rel="stylesheet" href="/static/layui/css/layui.css">
+<link rel="stylesheet" href="/static/css/footer.css">
 <script src="/static/layui/layui.js"></script>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
@@ -341,11 +342,16 @@
         $(".menu-item-title").click((e)=>{
             window.location.href = $(e.target).data().url;
         });
-        $(".left-menu-title").dblclick((e)=>{
-        window.location.href = $(e.target).data().url;
+        $(".left-menu-title").click((e)=>{
+            let _this = $(e.target);
+            // console.log();
+            let isActive = _this.closest(".left-menu-item").hasClass("active");
+            if(isActive){
+                window.location.href = $(e.target).data().url;
+            }
         });
         $(".left-menu-child").click((e)=>{
-        window.location.href = $(e.target).data().url;
+            window.location.href = $(e.target).data().url;
         });
     });
   })()
@@ -395,19 +401,19 @@
       carousel.render({
         elem: '#lunbo_index'
         ,width: document.body.clientWidth //设置容器宽度
-        ,height: document.body.clientWidth/2.5
+        ,height: document.body.clientWidth/3
         ,arrow: 'always' //始终显示箭头
         //,anim: 'updown' //切换动画方式
       });
     });
   </script>
 </div>
-<!-- <div class="nei1">
+<div class="nei1">
   <div class="container clearfix">
     <div class="fr" style="margin-top:5px;"> <a href="/Page/list/93.html"> <img src="/static/picture/lianxi_1.jpg" alt="" /> </a> </div>
   </div>
-</div> -->
-<!-- <div class="nei2">
+</div>
+<div class="nei2">
   <div class="container">
     <div class="nei2tit"> 产品中心 </div>
     <div class="nei2Con">
@@ -582,12 +588,10 @@
 	   
 	   </div>
   </div>
-</div> -->
- 
- 
-<style>
+</div>
 
-</style>
+ 
+ 
 <div class="foot">
   <div class="footer clearfix">
     <div class="fl footOne">
@@ -606,7 +610,7 @@
       </ul>
     </div>
     <div class="fr erwei">
-      <p><img src="/static/picture/1543485366826110_1.jpg" title="特西电气" alt="特西电气" width="219" height="220" style="width: 219px; height: 220px;" border="0" vspace="0"/></p>
+      <p><img src="/static/picture/1543485366826110_1.jpg" title="特西电气" alt="特西电气" width="219" height="220" style="width: 219px; height: 220px;" vspace="0"/></p>
     </div>
   </div>
 </div>
@@ -621,8 +625,8 @@
 </div>
   
 <!--底部JS加载区域-->
-<!-- <script type="text/javascript" src="/static/js/common_1.js"></script> -->
-<!-- <script type="text/javascript" src="/static/js/message_1.js"></script> -->
+<script type="text/javascript" src="/static/js/common_1.js"></script>
+<script type="text/javascript" src="/static/js/message_1.js"></script>
 </body>
 </html>
 
