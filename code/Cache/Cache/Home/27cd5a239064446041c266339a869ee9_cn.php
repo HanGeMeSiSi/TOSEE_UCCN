@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo ($seo_title); ?>-<?php echo ($site_name); ?></title> 
 <meta name="keywords" content="<?php if($seo_keywords=='') : echo ($seo_title); else : echo ($seo_keywords); endif;?>" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
 <meta name="description" content="<?php echo ($seo_description); ?>" />
 <meta name="baidu-site-verification" content="57egBW5jZG" />
 <link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
@@ -164,7 +165,7 @@
         {
             firstName:"联系我们",
             children:[],
-            url:"/Page/list/93.html"
+            url:""
         },
     ];
     
@@ -210,26 +211,37 @@
     $(document).ready(()=>{
         let pathname = window.location.pathname; 
         let menu_items = $(".menu .menu-item");
-
-        for(let i = 0;i<menu_items.length;i++){
-            let i_title = $(menu_items[i]).find(".menu-item-title").data("url");
-            let i_link = $(menu_items[i]).find(".menu-item-tanChu .menu-item-tanChu-link");
-          
-            if(pathname === i_title){
-                $(menu_items[i]).addClass("active");
-                break;
-            }else{
-                for(let j=0;j<i_link.length;j++){
-                    let childrenUrl = $(i_link[j]).data("url");
-                    if(childrenUrl === pathname){
-                        $(menu_items[i]).addClass("active");
-                        break;
+        menu_item_active();
+        function menu_item_active(){
+            for(let i = 0;i<menu_items.length;i++){
+                let titleName = $(menu_items[i]).find(".menu-item-title").text();
+                titleName = titleName.replace(/\s*/g,"");
+                if(titleName === "联系我们"){
+                    $(menu_items[i]).attr("title","4008897913").css({position:"relative"}).append(
+                        `<div class="lianxi_tanchu">
+                            <img src="/static/picture/1515132262343080_1.png"/>
+                            <span>4008897913</span>
+                        </div>`
+                    );
+                }
+                let i_title = $(menu_items[i]).find(".menu-item-title").data("url");
+                let i_link = $(menu_items[i]).find(".menu-item-tanChu .menu-item-tanChu-link");
+            
+                if(pathname === i_title){
+                    $(menu_items[i]).addClass("active");
+                    return;
+                }else{
+                    for(let j=0;j<i_link.length;j++){
+                        let childrenUrl = $(i_link[j]).data("url");
+                        if(childrenUrl === pathname){
+                            $(menu_items[i]).addClass("active");
+                            break;
+                        }
                     }
                 }
             }
-                     
         }
-
+        
         $("#btn-menu").click(()=>{
             $(".sm-menu-item").addClass("active");
         });
@@ -328,7 +340,11 @@
         $(".menu-item-title").click((e)=>{
             window.location.href = $(e.target).data().url;
         });
+        $(".menu-item-title").dblclick((e)=>{
+            console.log(e)
+        });
         $(".left-menu-title").dblclick((e)=>{
+            console.log(e)
         window.location.href = $(e.target).data().url;
         });
         $(".left-menu-child").click((e)=>{
@@ -337,21 +353,19 @@
     });
   })()
 </script>
-<div style="height: 65px;"></div>
+<div class="top_zhanwei"></div>
 
 
 		<!-- 内页banner -->
 
-<div class="n_banner">   <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" />  </div>
+<div class="n_banner"> <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" /> </div>
 <div class="neiBox">
   <!-- 主体部分 -->
   <div id="container" class="clearfix">
     <div class="left">
-      <div class="box sort_menu">
-	  
-	    <h3>新闻中心</h3>
+      <div class="box sort_menu">  <h3> 特西电气</h3>
 <ul class="sort">
-  <?php $n=0;foreach($Categorys as $key=>$r):if( $r['ismenu']==1 && intval(71)==$r["parentid"] ) :++$n;?><li class="layer1"> <a href="<?php echo ($r["url"]); ?>" class="list_item"><?php echo ($r["catname"]); ?></a>
+  <?php $n=0;foreach($Categorys as $key=>$r):if( $r['ismenu']==1 && intval(83)==$r["parentid"] ) :++$n;?><li class="layer1"> <a href="<?php echo ($r["url"]); ?>" class="list_item"><?php echo ($r["catname"]); ?></a>
       <div class="layer2" style="display:none;">
         <ul>
         </ul>
@@ -359,45 +373,49 @@
     </li><?php endif; endforeach;?>
 </ul>
 
-	  
-        
-        
         <script type="text/javascript">
-$(".layer1").hover
-(
-	function()
-	{
-		if($(this).find(".layer2 li").length > 0)
-		{
-			$(this).find(".layer2").show();
-		}
-	},
-	function()
-	{
-		$(this).find(".layer2").hide();
-	}
-);
 
-$(".layer2 li").hover
-(
-	function()
-	{
-		if($(this).find(".layer3 li").length > 0)
-		{
-			$(this).find(".layer3").show();
-		}
-	},
-	function()
-	{
-		$(this).find(".layer3").hide();
-	}
-);
+ var url   = location.pathname;
+ var urlArray = url.split("/");
+ var name = urlArray[urlArray.length-2];
+ 
+ var aboutArray1  = ["about"];
+ var about_Array2 = ["about_server"];
+ var about_Array3 = ["about_renli"];
+ 
+ if(name==aboutArray1){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160741_498.jpg");
+ }else if(name == about_Array2){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160707_178.jpg");
+ }else if(name == about_Array3){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160722_735.jpg");
+ }
+ 
+ //判断元素是否包含在数组中
+ function in_array(str,arr){
+	  for(var f1 in arr){
+		if(arr[f1] == name){
+			return true;
+		 }
+	   }
+	   return false;
+  }
+
+ </script>
+        <script type="text/javascript">
+$(function(){
+	$(".sort > li:eq(0)").addClass("current2");
+	var url = window.location.href;
+	$(".sort > li").each(function(){
+		if($(this).children('a').attr("href") == url ){
+			$(".sort>li:eq(0)").removeClass("current2");
+			$(this).addClass("current2");
+		};
+	});
+});
 </script>
       </div>
-       
-     
-      <div class="box n_search">
-         
+      <div class="box n_search"> 
 <h3>相关产品</h3>
 <div class="content">
   <ul class="news_list words">
@@ -414,26 +432,22 @@ $(".layer2 li").hover
 			  });
 			</script>
       </div>
-      
     </div>
     <div class="right">
       <div class="sitemp clearfix">
-        <h2> <?php echo ($catname); ?> </h2>
-        <div class="site">您的当前位置： <a href="/">首 页</a>&nbsp;>>&nbsp;<a href="<?php echo ($caturl); ?>"><?php echo ($catname); ?></a> </div>
+        <h2>售后服务 </h2>
+        <div class="site">您的当前位置： <a href="/">首 页</a>><span class="cc"><?php echo ($title); ?></span> </div>
       </div>
       <div class="content">
-        <ul class="news_list clearfix">
-          <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$r): $mod = ($i % 2 );++$i;?><li>
-              <h3><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></h3>
-              <div> <?php echo ($r["description"]); ?> </div>
-              <span>发布时间：<?php echo (todate($r["createtime"],'Y-m-d')); ?>&nbsp;&nbsp;&nbsp;点击次数：<?php echo ($r["hits"]); ?></span> </li>
-            <hr/><?php endforeach; endif; else: echo "" ;endif; ?>
-          <hr/>
-          <div class="clearboth"></div>
-        </ul>
-        <div class="pageController">
-          <div class="t1"> <?php echo ($pages); ?> </div>
-        </div>
+        <p style="margin-top: 0px; margin-bottom: 0px; text-indent: 42px; line-height: 24px;"><span style="font-family: 微软雅黑; font-size: 14px;"><br/>
+          </span></p>
+        <p style="margin-top: 0px; margin-bottom: 0px; text-indent: 42px; line-height: 24px;"><span style="font-family: 微软雅黑; font-size: 14px;">本公司创办以来，实行三级售后服务体系，已拥有一套完善的质量保证体系，公司为产品购买方建立资料档案，定期进行质量跟踪、使用回访服务。</span><br/>
+        </p>
+        <p style="margin-top: 0px; margin-bottom: 0px; line-height: 24px;"><span style="font-family: 宋体, SimSun;"><span style="font-family: 微软雅黑; font-weight: normal; font-size: 14px;"><span style="font-family: 微软雅黑;">为了更好的服务用户的需求，做好使用指导、及时提供售后服务工作，我方本着</span>“一切追求高质量、高品质、用户满意为宗旨”的精神。以“周到的服务、可靠的产品质量”为原则向用户做如下承诺：</span><span style="font-family: 微软雅黑; font-weight: normal; font-size: 18px;"><br/>
+          </span><span style="font-family: 微软雅黑; font-weight: normal; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>1）我公司的企业网站中，随时有人对<span style="font-family: 微软雅黑;">其进行</span>“驻守”，客户对产品的使用有疑问，服务人员给予迅速解<span style="font-family: 微软雅黑;">答，如需上门服务，服务人员对客户信息和客户问题进行登记，并将售后任务进行分派，提高顾客的售后满意度。</span><br/>
+          <span style="font-family: 微软雅黑;">（</span>2）当<span style="font-family: 微软雅黑;">产品出现故障时，请拨打本公司的售后服务电话</span>0755-29773208<span style="font-family: 微软雅黑;">，接到用户通知后，售后服务人员迅速作出响应，为用户排除故障。</span></span></span></p>
+        <p><br/>
+        </p>
       </div>
     </div>
   </div>
@@ -441,10 +455,8 @@ $(".layer2 li").hover
 
  
  
-<!-- <style>
-.footnei li{overflow: hidden;
-    line-height: 30px;
-    height: 30px;}
+<style>
+
 </style>
 <div class="foot">
   <div class="footer clearfix">
@@ -461,7 +473,6 @@ $(".layer2 li").hover
       <p><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 24px;"><strong>新闻中心</strong></span></p>
       <ul class="footnei">
 	  	<?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1 ")->order("updatetime desc,id desc")->limit("4")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><li><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></li><?php endforeach; endif;?>
-        
       </ul>
     </div>
     <div class="fr erwei">
@@ -477,15 +488,13 @@ $(".layer2 li").hover
     </div>
      
   </div>
-</div> -->
+</div>
   
 <!--底部JS加载区域-->
-<script type="text/javascript" src="/static/js/common_1.js"></script>
-<script type="text/javascript" src="/static/js/message_1.js"></script>
-<script>
-    bb1(); //首页banner切换
-    </script>
-</body></html>
+<!-- <script type="text/javascript" src="/static/js/common_1.js"></script> -->
+<!-- <script type="text/javascript" src="/static/js/message_1.js"></script> -->
+</body>
+</html>
 
 
 

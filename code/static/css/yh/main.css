@@ -123,3 +123,7 @@ a{outline: none;transition: color 0.2s ease 0s;}/*CSS3链接秒数缓冲效果2�
 .ml-2{
     margin-left: 16px;
 }
+body{
+    width: 100%;
+    /* overflow: hidden; */
+}

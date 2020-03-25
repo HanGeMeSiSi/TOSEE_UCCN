@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo ($seo_title); ?>-<?php echo ($site_name); ?></title> 
 <meta name="keywords" content="<?php if($seo_keywords=='') : echo ($seo_title); else : echo ($seo_keywords); endif;?>" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
 <meta name="description" content="<?php echo ($seo_description); ?>" />
 <meta name="baidu-site-verification" content="57egBW5jZG" />
 <link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
@@ -65,25 +66,25 @@
             children:[
                 {
                     name:"新品介绍",
-                    url:""
+                    url:"/Product/list/74.html"
                 },{
                     name:"智能集中控制器",
-                    url:""
+                    url:"/Product/list/75.html"
                 },{
                     name:"智能空开",
-                    url:""
+                    url:"/Product/list/76.html"
                 },{
                     name:"智能断路器",
-                    url:""
+                    url:"/Product/list/77.html"
                 },{
                     name:"智能电箱",
-                    url:""
+                    url:"/Product/list/78.html"
                 },{
                     name:"智能用电管理系统",
-                    url:""
+                    url:"/Product/list/79.html"
                 },{
                     name:"智能用电检测仪",
-                    url:""
+                    url:"/Product/list/80.html"
                 }
             ],
             url:"/Product/list/72.html"
@@ -126,15 +127,15 @@
             children:[
                 {
                     name:"公司新闻",
-                    url:""
+                    url:"/Article/list/86.html"
                 },
                 {
                     name:"政策法规",
-                    url:""
+                    url:"/Article/list/87.html"
                 },
                 {
                     name:"行业资讯",
-                    url:""
+                    url:"/Article/list/88.html"
                 }
             ],
             url:"/Article/list/71.html"
@@ -144,19 +145,19 @@
             children:[
                 {
                     name:"企业简介",
-                    url:""
+                    url:"/Page/list/90.html"
                 },
                 {
                     name:"招商计划",
-                    url:""
+                    url:"/Page/list/91.html"
                 },
                 {
                     name:"人员招聘",
-                    url:""
+                    url:"/Page/list/92.html"
                 },
                 {
                     name:"联系我们",
-                    url:""
+                    url:"/Page/list/93.html"
                 }
             ],
             url:"/Page/list/89.html"
@@ -164,7 +165,7 @@
         {
             firstName:"联系我们",
             children:[],
-            url:"/Page/list/93.html"
+            url:""
         },
     ];
     
@@ -208,6 +209,40 @@
     $(".lg-menu-item .menu").html(newLGMenu);
     $(".sm-menu-item .left-menu").html(newLeftMenu);
     $(document).ready(()=>{
+        let pathname = window.location.pathname; 
+        let menu_items = $(".menu .menu-item");
+        let titleName = $(menu_items[menu_items.length-1]).find(".menu-item-title").text();
+        titleName = titleName.replace(/\s*/g,"");
+        // console.log(titleName)
+        if(titleName === "联系我们"){
+            $(menu_items[menu_items.length-1]).attr("title","4008897913").css({position:"relative"}).append(
+                `<div class="lianxi_tanchu">
+                    <img src="/static/picture/1515132262343080_1.png"/>
+                    <span>4008897913</span>
+                </div>`
+            );
+        }
+        menu_item_active();
+        function menu_item_active(){
+            for(let i = 0;i<menu_items.length;i++){
+                let i_title = $(menu_items[i]).find(".menu-item-title").data("url");
+                let i_link = $(menu_items[i]).find(".menu-item-tanChu .menu-item-tanChu-link");
+            
+                if(pathname === i_title){
+                    $(menu_items[i]).addClass("active");
+                    return;
+                }else{
+                    for(let j=0;j<i_link.length;j++){
+                        let childrenUrl = $(i_link[j]).data("url");
+                        if(childrenUrl === pathname){
+                            $(menu_items[i]).addClass("active");
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
         $("#btn-menu").click(()=>{
             $(".sm-menu-item").addClass("active");
         });
@@ -249,8 +284,8 @@
                 })
             }
         });
-        
-        $(".menu .menu-item").mouseenter((e)=>{
+       
+        menu_items.mouseenter((e)=>{
             let _this = $(e.target);
             let allmenuitems = $(".menu .menu-item");
             if(!_this.hasClass("menu-item")){
@@ -279,7 +314,7 @@
                 height:30*childrenLength+"px"
             })
         });
-        $(".menu .menu-item").mouseleave((e)=>{
+        menu_items.mouseleave((e)=>{
             let _this = $(e.target);
             if(!_this.hasClass("menu-item")){
                 _this = _this.closest(".menu-item");
@@ -304,7 +339,7 @@
         window.location.href = $(e.target).data().url;
         });
         $(".menu-item-title").click((e)=>{
-        window.location.href = $(e.target).data().url;
+            window.location.href = $(e.target).data().url;
         });
         $(".left-menu-title").dblclick((e)=>{
         window.location.href = $(e.target).data().url;
@@ -315,7 +350,7 @@
     });
   })()
 </script>
-<div style="height: 65px;"></div>
+<div class="top_zhanwei"></div>
 
 
 		<!-- 首页banner -->
@@ -333,22 +368,22 @@
     <div carousel-item>
       <div>
         <a title="小型智能断路器" href="/product/227.html" target="_blank"> 
-          <img src="/static/picture/20191120160054_514_1.jpg" alt="小型智能断路器"/> 
+          <img src="/static/picture/20191120160054_514_1.jpg" alt="小型智能断路器" style="width: 100%;height: 100%;"/> 
         </a>
       </div>
       <div>
         <a title="智能空开招商加盟" href="/about_zsjh/" target="_blank"> 
-          <img src="/static/picture/20190903094418_210_1.jpg" alt="智能空开招商加盟"/> 
+          <img src="/static/picture/20190903094418_210_1.jpg" alt="智能空开招商加盟" style="width: 100%;height: 100%;"/> 
         </a>
       </div>
       <div>
         <a title="智能用电管理系统" href="/product/225.html" target="_blank"> 
-          <img src="/static/picture/20190903094548_592_1.jpg" alt="智能用电管理系统"/> 
+          <img src="/static/picture/20190903094548_592_1.jpg" alt="智能用电管理系统" style="width: 100%;height: 100%;"/> 
         </a>
       </div>
       <div>
         <a title="智能用电检测仪" href="/product/228.html" target="_blank"> 
-          <img src="/static/picture/20190903094619_825_1.jpg" alt="智能用电检测仪"/> 
+          <img src="/static/picture/20190903094619_825_1.jpg" alt="智能用电检测仪" style="width: 100%;height: 100%;"/> 
         </a>
       </div>
     </div>
@@ -359,19 +394,20 @@
       //建造实例
       carousel.render({
         elem: '#lunbo_index'
-        ,width: '100%' //设置容器宽度
+        ,width: document.body.clientWidth //设置容器宽度
+        ,height: document.body.clientWidth/2.5
         ,arrow: 'always' //始终显示箭头
         //,anim: 'updown' //切换动画方式
       });
     });
-    </script>
+  </script>
 </div>
 <!-- <div class="nei1">
   <div class="container clearfix">
     <div class="fr" style="margin-top:5px;"> <a href="/Page/list/93.html"> <img src="/static/picture/lianxi_1.jpg" alt="" /> </a> </div>
   </div>
 </div> -->
-<div class="nei2">
+<!-- <div class="nei2">
   <div class="container">
     <div class="nei2tit"> 产品中心 </div>
     <div class="nei2Con">
@@ -546,13 +582,11 @@
 	   
 	   </div>
   </div>
-</div>
+</div> -->
  
  
 <style>
-.footnei li{overflow: hidden;
-    line-height: 30px;
-    height: 30px;}
+
 </style>
 <div class="foot">
   <div class="footer clearfix">
@@ -569,7 +603,6 @@
       <p><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 24px;"><strong>新闻中心</strong></span></p>
       <ul class="footnei">
 	  	<?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1 ")->order("updatetime desc,id desc")->limit("4")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><li><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></li><?php endforeach; endif;?>
-        
       </ul>
     </div>
     <div class="fr erwei">
@@ -588,19 +621,17 @@
 </div>
   
 <!--底部JS加载区域-->
-<script type="text/javascript" src="/static/js/common_1.js"></script>
-<script type="text/javascript" src="/static/js/message_1.js"></script>
-<script>
-    bb1(); //首页banner切换
-    </script>
-</body></html>
+<!-- <script type="text/javascript" src="/static/js/common_1.js"></script> -->
+<!-- <script type="text/javascript" src="/static/js/message_1.js"></script> -->
+</body>
+</html>
 
 
 
 
 
 <!--在线客服-->
-<link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
+<!-- <link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
 <div id="floatTools" class="float0831">
   <div class="floatL"> <a title="关闭在线客服" class="btnCtn" id="aFloatTools_Hide" style="display: block;" onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);">收缩</a> <a title="查看在线客服" class="btnOpen" id="aFloatTools_Show" style="display: none;" onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">展开</a> </div>
   <div id="divFloatToolsView" class="floatR">
@@ -626,5 +657,5 @@
       </ul>
     </div>
   </div>
-</div>
+</div> -->
 <!-----foot end------->

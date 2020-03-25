@@ -164,7 +164,7 @@
         {
             firstName:"联系我们",
             children:[],
-            url:"/Page/list/93.html"
+            url:""
         },
     ];
     
@@ -210,26 +210,37 @@
     $(document).ready(()=>{
         let pathname = window.location.pathname; 
         let menu_items = $(".menu .menu-item");
-
-        for(let i = 0;i<menu_items.length;i++){
-            let i_title = $(menu_items[i]).find(".menu-item-title").data("url");
-            let i_link = $(menu_items[i]).find(".menu-item-tanChu .menu-item-tanChu-link");
-          
-            if(pathname === i_title){
-                $(menu_items[i]).addClass("active");
-                break;
-            }else{
-                for(let j=0;j<i_link.length;j++){
-                    let childrenUrl = $(i_link[j]).data("url");
-                    if(childrenUrl === pathname){
-                        $(menu_items[i]).addClass("active");
-                        break;
+        menu_item_active();
+        function menu_item_active(){
+            for(let i = 0;i<menu_items.length;i++){
+                let titleName = $(menu_items[i]).find(".menu-item-title").text();
+                titleName = titleName.replace(/\s*/g,"");
+                if(titleName === "联系我们"){
+                    $(menu_items[i]).attr("title","4008897913").css({position:"relative"}).append(
+                        `<div class="lianxi_tanchu">
+                            <img src="/static/picture/1515132262343080_1.png"/>
+                            <span>4008897913</span>
+                        </div>`
+                    );
+                }
+                let i_title = $(menu_items[i]).find(".menu-item-title").data("url");
+                let i_link = $(menu_items[i]).find(".menu-item-tanChu .menu-item-tanChu-link");
+            
+                if(pathname === i_title){
+                    $(menu_items[i]).addClass("active");
+                    return;
+                }else{
+                    for(let j=0;j<i_link.length;j++){
+                        let childrenUrl = $(i_link[j]).data("url");
+                        if(childrenUrl === pathname){
+                            $(menu_items[i]).addClass("active");
+                            break;
+                        }
                     }
                 }
             }
-                     
         }
-
+        
         $("#btn-menu").click(()=>{
             $(".sm-menu-item").addClass("active");
         });
@@ -342,14 +353,13 @@
 
 		<!-- 内页banner -->
 
-<div class="n_banner">   <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" />  </div>
+<div class="n_banner"> <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" /> </div>
 <div class="neiBox">
   <!-- 主体部分 -->
   <div id="container" class="clearfix">
     <div class="left">
       <div class="box sort_menu">
-	  
-	    <h3>新闻中心</h3>
+        <h3>新闻中心</h3>
 <ul class="sort">
   <?php $n=0;foreach($Categorys as $key=>$r):if( $r['ismenu']==1 && intval(71)==$r["parentid"] ) :++$n;?><li class="layer1"> <a href="<?php echo ($r["url"]); ?>" class="list_item"><?php echo ($r["catname"]); ?></a>
       <div class="layer2" style="display:none;">
@@ -359,9 +369,6 @@
     </li><?php endif; endforeach;?>
 </ul>
 
-	  
-        
-        
         <script type="text/javascript">
 $(".layer1").hover
 (
@@ -395,9 +402,8 @@ $(".layer2 li").hover
 </script>
       </div>
        
-     
       <div class="box n_search">
-         
+        
 <h3>相关产品</h3>
 <div class="content">
   <ul class="news_list words">
@@ -418,21 +424,42 @@ $(".layer2 li").hover
     </div>
     <div class="right">
       <div class="sitemp clearfix">
-        <h2> <?php echo ($catname); ?> </h2>
-        <div class="site">您的当前位置： <a href="/">首 页</a>&nbsp;>>&nbsp;<a href="<?php echo ($caturl); ?>"><?php echo ($catname); ?></a> </div>
+        <h2> 智能断路器的优势 </h2>
+        <div class="site">您的当前位置  <a href="<?php echo URL();?>"><?php echo L(home_font);?></a> >  <?php  $arrparentid = array_filter(explode(',', $Categorys[$catid]['arrparentid'].','.$catid));foreach($arrparentid as $cid):$parsestr[] = '<a href="'.$Categorys[$cid]['url'].'">'.$Categorys[$cid]['catname'].'</a>'; endforeach;echo implode(" &gt; ",$parsestr);?></div>
       </div>
       <div class="content">
-        <ul class="news_list clearfix">
-          <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$r): $mod = ($i % 2 );++$i;?><li>
-              <h3><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></h3>
-              <div> <?php echo ($r["description"]); ?> </div>
-              <span>发布时间：<?php echo (todate($r["createtime"],'Y-m-d')); ?>&nbsp;&nbsp;&nbsp;点击次数：<?php echo ($r["hits"]); ?></span> </li>
-            <hr/><?php endforeach; endif; else: echo "" ;endif; ?>
-          <hr/>
-          <div class="clearboth"></div>
-        </ul>
-        <div class="pageController">
-          <div class="t1"> <?php echo ($pages); ?> </div>
+        <!-- 新闻详细 -->
+        <div class="news_detail">
+          <h1 class="title">智能断路器的优势</h1>
+          <div class="info_title clearfix">
+            <h3 class="title_bar"> 发布日期：<span><?php echo (todate($createtime,"Y/m/d")); ?></span> 来源：<span>http://www.sztosee.com</span> 点击：<span>
+             <?php echo ($hits); ?>
+              </span> </h3>
+            <div class="share">
+              <!-- Baidu Button BEGIN -->
+              <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_tsina"></a> <a class="bds_qzone"></a> <a class="bds_tqq"></a> <a class="bds_hi"></a> <a class="bds_qq"></a> <a class="bds_tieba"></a> <span class="bds_more">更多</span> <a class="shareCount"></a> </div>
+              <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6513684" ></script>
+              <script type="text/javascript" id="bdshell_js"></script>
+              <script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+              <!-- Baidu Button END -->
+            </div>
+          </div>
+          <div class="content">
+            <?php echo ($content); ?>
+          </div>
+         
+          <div class="page">
+		   <?php
+ $Model = new Model(); $mym = "Article"; $sql = "SELECT Max(id) as max_id FROM maxhom_$mym WHERE id<$id limit 1"; $res = $Model->query($sql); $max_id = intval($res[0]['max_id']); $prevrow = M($mym)->field('id,title')->where("id=$max_id")->find(); $prev_id= intval($prevrow['id']); $sql = "SELECT MIN(id) as min_id FROM maxhom_$mym WHERE id>$id limit 1"; $res = $Model->query($sql); $min_id = intval($res[0]['min_id']); $nextrow = M($mym)->field('id,title')->where("id=$min_id")->find(); $next_id = intval($nextrow['id']); ?>
+          <div class="page">上一篇：<a href="/Article/show/<?php echo $prev_id?>.html"><?php echo $prevrow['title'];?></a><br />
+            下一篇：<span><a href="/Article/show/<?php echo $next_id?>.html"><?php echo $nextrow['title'];?></a></span></div>
+		  
+		  </div>
+        </div>
+        <!-- 相关产品和相关新闻 -->
+        
         </div>
       </div>
     </div>
@@ -441,51 +468,16 @@ $(".layer2 li").hover
 
  
  
-<!-- <style>
-.footnei li{overflow: hidden;
-    line-height: 30px;
-    height: 30px;}
+<style>
+
 </style>
-<div class="foot">
-  <div class="footer clearfix">
-    <div class="fl footOne">
-      <p><img src="/static/picture/1543485466481995_1.png" title="1543485466481995.png" alt="LOGO.png" width="196" height="74" style="width: 196px; height: 74px;"/></p>
-      <div class="lianxi">
-        <p>深圳市宝安区沙井街道后亭学子围工业区C栋2楼</p>
-        <p>全国统一服务热线 : 4008897913</p>
-        <p>E-mail : 3310073861@qq.com</p>
-        <p>Q Q：3310073861</p>
-      </div>
-    </div>
-    <div class="fl footTwo">
-      <p><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 24px;"><strong>新闻中心</strong></span></p>
-      <ul class="footnei">
-	  	<?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1 ")->order("updatetime desc,id desc")->limit("4")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><li><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></li><?php endforeach; endif;?>
-        
-      </ul>
-    </div>
-    <div class="fr erwei">
-      <p><img src="/static/picture/1543485366826110_1.jpg" title="特西电气" alt="特西电气" width="219" height="220" style="width: 219px; height: 220px;" border="0" vspace="0"/></p>
-    </div>
-  </div>
-</div>
-<div class="foot2">
-  <div class="footer">
-    <div class="clearboth"></div>
-    <div class="copyright">
-      <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue="粤ICP备15032763号">粤ICP备15032763号</a></p>
-    </div>
-     
-  </div>
-</div> -->
+
   
 <!--底部JS加载区域-->
-<script type="text/javascript" src="/static/js/common_1.js"></script>
-<script type="text/javascript" src="/static/js/message_1.js"></script>
-<script>
-    bb1(); //首页banner切换
-    </script>
-</body></html>
+<!-- <script type="text/javascript" src="/static/js/common_1.js"></script> -->
+<!-- <script type="text/javascript" src="/static/js/message_1.js"></script> -->
+</body>
+</html>
 
 
 

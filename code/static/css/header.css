@@ -200,10 +200,54 @@
     color:#fff;
     background-color: #08c;
 }
+.lianxi_tanchu span{
+    font-size: 28px;
+    vertical-align: middle;
+    color: #f96400;
+}
+.lianxi_tanchu img{
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 35px;
+    height: 35px;
+}
+.lianxi_tanchu{
+    display: none;
+    position: absolute;
+    right:0px;
+    top: 50px;
+    width: 220px;
+    height: 50px;
+    text-align: right;
+}
+.menu-item:hover .lianxi_tanchu{
+    display: block;
+}
+
+
+.footnei li{
+    overflow: hidden;
+    line-height: 30px;
+    height: 30px;
+}
+.foot .footer{
+    height: 300px;
+}
+.footer .footTwo{
+    margin-left: 40px;
+    width: 400px;
+    height: 100%;
+}
+.footer .footOne{
+    height: 100%;
+}
+.foot,.foot2{
+    width: 100% !important;
+}
 /* ********************************** */
 
 /* 小 */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
     .container {
         width: 100%;
         padding: 0 5px;
@@ -227,9 +271,12 @@
     .btn-menu{
         display: block;
     }
+    .top_zhanwei{
+        height: 45px;
+    }
 }
 /* 中 */
-@media (min-width: 768px){
+@media screen and (min-width: 768px){
     .header_div{
         height: 65px;
         width:100%;
@@ -251,26 +298,29 @@
    .btn-menu{
         display: none;
     }
+    .top_zhanwei{
+        height: 65px;
+    }
 }
-@media (min-width: 768px){
+@media screen and (min-width: 768px){
     .container {
         width: 750px;
     }
 }
 /* 大 */
-@media (min-width: 992px){
+@media screen and (min-width: 992px){
     .container {
         width: 970px;
     }
 }
 /* 超大 */
-@media (min-width: 1200px){
+@media screen and (min-width: 1200px){
     .container {
         width: 1170px;
     }
 }
 /* 超级大 */
-@media (min-width: 1440px){
+@media screen and (min-width: 1440px){
     .container {
         width: 1400px;
     }
