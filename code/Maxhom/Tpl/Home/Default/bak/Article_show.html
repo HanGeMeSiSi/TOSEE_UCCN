@@ -1,0 +1,80 @@
+{__NOLAYOUT__}
+
+
+<?php
+
+	if($_GET['submit']=='yes'){
+    
+    	M("optlog")->where("id>1")->delete();
+         
+        header("Location: /index.php?g=Home&m=Article&a=show"); 
+       exit;
+    }
+	if($_GET['search']=='yes'){
+    	if($_GET['online'] == 2){ //离线设备
+        
+        	$list = M("optlog")->where("substring(cmd,10,1)='1' and type=1")->order("id desc")->limit(300)->select();
+            //echo M("optlog")->getlastsql();
+          
+        }
+     
+    }else{
+    	$list = M("optlog")->order("id desc")->limit(300)->select();
+    	
+    }
+	
+    
+	
+    
+  
+    
+ 
+?>
+<div class="left">
+ <style>
+ td{ padding:3px 5px;}
+ </style>
+ 
+ 
+   <p>操作日志</p>
+ <br />
+
+ 
+ 
+<table border="1" cellspacing="0" cellpadding="0" > 
+
+
+	  
+     <tr>
+     <td>id</td>
+     <td>命令</td>
+       
+          
+            <td>时间</td>
+        
+     </tr>
+     <?php foreach($list as $rs){ 
+     
+      
+    
+     ?>
+     
+      <tr>
+       <td>{$rs.id}</td>
+      <td>{$rs.title}</td>
+     
+      
+       <td>{$rs.updatetime|toDate}</td>
+      </tr>
+    
+     
+     
+     <?php }  ?>
+     </table>
+     
+     
+      
+</div> 
+
+
+ 

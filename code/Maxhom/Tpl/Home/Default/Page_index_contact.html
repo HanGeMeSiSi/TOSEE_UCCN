@@ -1,0 +1,96 @@
+<!-- 内页banner -->
+
+<div class="n_banner"> <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" /> </div>
+<div class="neiBox">
+  <!-- 主体部分 -->
+  <div id="container" class="clearfix">
+    <div class="left">
+      <div class="box sort_menu"> <include file="Menu:gsjj"/>
+        <script type="text/javascript">
+
+ var url   = location.pathname;
+ var urlArray = url.split("/");
+ var name = urlArray[urlArray.length-2];
+ 
+ var aboutArray1  = ["about"];
+ var about_Array2 = ["about_server"];
+ var about_Array3 = ["about_renli"];
+ 
+ if(name==aboutArray1){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160741_498.jpg");
+ }else if(name == about_Array2){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160707_178.jpg");
+ }else if(name == about_Array3){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160722_735.jpg");
+ }
+ 
+ //判断元素是否包含在数组中
+ function in_array(str,arr){
+	  for(var f1 in arr){
+		if(arr[f1] == name){
+			return true;
+		 }
+	   }
+	   return false;
+  }
+
+ </script>
+        <script type="text/javascript">
+$(function(){
+	$(".sort > li:eq(0)").addClass("current2");
+	var url = window.location.href;
+	$(".sort > li").each(function(){
+		if($(this).children('a').attr("href") == url ){
+			$(".sort>li:eq(0)").removeClass("current2");
+			$(this).addClass("current2");
+		};
+	});
+});
+</script>
+      </div>
+      <div class="box n_search">
+         <include file="Related:product"/>
+        <script type="text/javascript">
+			  $(function(){
+			  	$(".words li:odd").addClass("right_word");
+			  });
+			</script>
+      </div>
+      
+      
+    </div>
+    <div class="right">
+      <div class="sitemp clearfix">
+        <h2>联系我们 </h2>
+        <div class="site">您的当前位置： <a href="/">首 页</a>><span class="cc">联系我们</span> </div>
+      </div>
+      <div class="content">
+        <p><br/>
+        </p>
+        <table align="center" uetable="null">
+          <tbody>
+            <tr class="firstRow">
+              <td style="BORDER-BOTTOM-COLOR: rgb(221,221,221); BORDER-TOP-COLOR: rgb(221,221,221); BORDER-RIGHT-COLOR: rgb(221,221,221); BORDER-LEFT-COLOR: rgb(221,221,221)" valign="top"><img style="WIDTH: 263px; HEIGHT: 247px" title="" border="0" alt="" src="/static/picture/1429492934373519.png" width="263" height="247"/></td>
+              <td style="BORDER-BOTTOM-COLOR: rgb(221,221,221); BORDER-TOP-COLOR: rgb(221,221,221); BORDER-RIGHT-COLOR: rgb(221,221,221); BORDER-LEFT-COLOR: rgb(221,221,221)" valign="top"><br/></td>
+              <td style="border-color: rgb(221, 221, 221); word-break: break-all;" valign="top"><p style="LINE-HEIGHT: 2em"><strong><span style="FONT-FAMILY: 微软雅黑, &#39;Microsoft YaHei&#39;; FONT-SIZE: 16px">深圳市特西智能电气有限公司</span></strong></p>
+                <span style="FONT-FAMILY: 微软雅黑, &#39;Microsoft YaHei&#39;; FONT-SIZE: 16px">
+                <p style="LINE-HEIGHT: 2em"><br style="WHITE-SPACE: normal"/>
+                  手&nbsp; 机：189-2646-9431<span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></span></p>
+                <p style="LINE-HEIGHT: 2em">电&nbsp; 话<span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; line-height: 32px;">：<span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">400-889-7913</span></span></p>
+                <p style="LINE-HEIGHT: 2em">网 &nbsp;址：<a href="http://<?php  echo $_SERVER['SERVER_NAME'];   ?>" target="_self"><?php  echo $_SERVER['SERVER_NAME'];   ?></a><br style="WHITE-SPACE: normal"/>
+                  地 &nbsp;址：深圳市宝安区沙井后亭学子围工业区C栋</p>
+                </span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><br/>
+        </p>
+        <p style="TEXT-ALIGN: center"><img width="530" height="340" src="/static/picture/8d629efd44e44523802910878ff3b6e6.gif"/></p>
+        <p style="text-align: center;"><br/>
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</div>

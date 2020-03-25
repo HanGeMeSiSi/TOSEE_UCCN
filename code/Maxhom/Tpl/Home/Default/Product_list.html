@@ -1,0 +1,79 @@
+<!-- 内页banner -->
+
+<div class="n_banner"> <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" /> </div>
+<div class="neiBox">
+  <!-- 主体部分 -->
+  <div id="container" class="clearfix">
+    <div class="left">
+      <div class="box sort_menu">
+        <h3>产品中心</h3>
+        <ul class="sort">
+          <YP:subcat  catid="72">
+            <li class="layer1"> <a href="{$r.url}" class="list_item">{$r.title}</a>
+              <div class="layer2" style="display:none;">
+                <ul>
+                </ul>
+              </div>
+            </li>
+          </YP:subcat>
+        </ul>
+        <script type="text/javascript">
+$(".layer1").hover
+(
+	function()
+	{
+		if($(this).find(".layer2 li").length > 0)
+		{
+			$(this).find(".layer2").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer2").hide();
+	}
+);
+
+$(".layer2 li").hover
+(
+	function()
+	{
+		if($(this).find(".layer3 li").length > 0)
+		{
+			$(this).find(".layer3").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer3").hide();
+	}
+);
+</script>
+      </div>
+      <div class="box n_search"> <include file="Related:product"/>
+        <script type="text/javascript">
+			  $(function(){
+			  	$(".words li:odd").addClass("right_word");
+			  });
+			</script>
+      </div>
+    </div>
+    <div class="right">
+      <div class="sitemp clearfix">
+        <h2> {$catname} </h2>
+        <div class="site">您的当前位置： <a href="/">首 页</a> >> <a href="{$Categorys.72.url}">{$Categorys.72.catname}</a> >> <a href="{$url}">{$catname}</a> </div>
+      </div>
+      <div class="content">
+        <ul class="product_list1 clearfix">
+          <volist name="list" id="r">
+            <li> <a href="{$r.url}" title="{$r.title}" target="_blank" class="img"><img src="{$r.thumb}" alt="{$r.title}" /></a>
+              <h3><a href="{$r.url}" title="{$r.title}" target="_blank">{$r.title}</a></h3>
+            </li>
+          </volist>
+        </ul>
+      </div>
+      <div class="page">
+        <p> {$pages} </p>
+      </div>
+    </div>
+  </div>
+</div>

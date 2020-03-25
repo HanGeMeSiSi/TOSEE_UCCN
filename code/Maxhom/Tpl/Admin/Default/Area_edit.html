@@ -1,0 +1,45 @@
+<load href="./Public/Js/maxhom.js"/>
+
+      <form id="myform" action="<if condition="$action_name=='add'">{:U('Area/insert')}<else />{:U('Area/update')}</if>" method="post">
+      	<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+      	<tr>
+		<td width="120">城市名</td>
+		<td><if condition="$action_name=='add'"> 
+		<input type="text" class="input-text"  name="name" validate="required:true, minlength:3, maxlength:20"/>
+		
+		<else /><input type="text" class="input-text"  name="name" value="{$vo.name}" ></if></td>
+		</tr>
+		
+		
+		
+	
+		
+		
+	
+	
+         
+        
+
+		</table>
+
+		<div class="btn">
+		<if condition="$action_name=='edit'"><input type="hidden" name="id" value="{$vo['id']}" />
+		
+		<input type="hidden" name="pid" value="{$pid}" />
+		<input type="hidden" name="level" value="{$level}" />
+		
+		<input type="hidden" name="forward" value="{$_SERVER['HTTP_REFERER']}" />
+		<INPUT TYPE="submit"  value="{:L('dosubmit')}" class="button" >
+		<input TYPE="reset"  value="{:L('cancel')}" class="button">
+		</div>
+
+      </form>
+      <!--  
+      <form action="/index.php?g=App&m=Diyapp&a=addUserAvatar&userid=1" method="post" enctype="multipart/form-data">  
+    <input type="file" name="file[]" /><br />  
+    <input type="file" name="file[]" /><br />  
+    <input type="file" name="file[]" /><br />  
+    <input type="submit" value="上传" />  
+</form>  
+-->
+     </div>

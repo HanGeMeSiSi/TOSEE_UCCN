@@ -1,0 +1,107 @@
+<!-- 内页banner -->
+
+<div class="n_banner">  <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" />   </div>
+<div class="neiBox">
+  <!-- 主体部分 -->
+  <div id="container" class="clearfix">
+    <div class="left">
+      <div class="box sort_menu">
+        <h3>案例中心</h3>
+        <ul class="sort">
+        <li class="layer1"> <a href="/Case/list/94.html" class="list_item">成功案例项目</a>
+            <div class="layer2" style="display:none;">
+              <ul>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <script type="text/javascript">
+$(".layer1").hover
+(
+	function()
+	{
+		if($(this).find(".layer2 li").length > 0)
+		{
+			$(this).find(".layer2").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer2").hide();
+	}
+);
+
+$(".layer2 li").hover
+(
+	function()
+	{
+		if($(this).find(".layer3 li").length > 0)
+		{
+			$(this).find(".layer3").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer3").hide();
+	}
+);
+</script>
+      </div>
+     
+      <div class="box n_search">
+       <include file="Related:product"/>
+        <script type="text/javascript">
+			  $(function(){
+			  	$(".words li:odd").addClass("right_word");
+			  });
+			</script>
+      </div>
+       
+     
+    </div>
+    <div class="right">
+      <div class="sitemp clearfix">
+        <h2> {$title} </h2>
+      <div class="site">您的当前位置： <a href="/">首 页</a>&nbsp;>>&nbsp;<a href="{$caturl}">{$catname}</a> </div>
+      </div>
+      <div class="content">
+        <!-- 案例详细 -->
+        <div class="case_detail">
+          <h1 style="text-align:center">{$title}</h1>
+          <hr/>
+          {$content}
+          <hr/>
+          <div class="content">
+            <p>{$title}</p>
+          </div>
+          
+         <?php
+		$Model = new Model();
+		
+		$mym = "Case";
+		$sql = "SELECT Max(id) as max_id FROM maxhom_$mym WHERE id<$id limit 1";
+		$res = $Model->query($sql);
+		$max_id = intval($res[0]['max_id']);
+		$prevrow = M($mym)->field('id,title')->where("id=$max_id")->find();
+		$prev_id= intval($prevrow['id']);
+		
+		
+		$sql = "SELECT MIN(id) as min_id FROM maxhom_$mym WHERE id>$id limit 1";
+		$res = $Model->query($sql);
+		$min_id = intval($res[0]['min_id']);
+		$nextrow = M($mym)->field('id,title')->where("id=$min_id")->find();
+		$next_id = intval($nextrow['id']);
+		 
+	  ?>
+          <div class="page">上一篇：<a href="/Case/show/<?php echo $prev_id?>.html"><?php echo $prevrow['title'];?></a><br />
+            下一篇：<span><a href="/Case/show/<?php echo $next_id?>.html"><?php echo $nextrow['title'];?></a></span></div>
+        </div>
+        <!-- 相关产品和相关新闻 -->
+        <div class="relate_list">
+          
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

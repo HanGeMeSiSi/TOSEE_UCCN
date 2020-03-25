@@ -1,0 +1,12 @@
+
+<h3>相关产品</h3>
+<div class="content">
+  <ul class="news_list words">
+    <?php
+		  	$slist = M("Product")->order("rand()")->limit(10)->select();
+			foreach($slist as $srs){
+		  	?>
+    <li><a href="{$srs.url}" title="{$srs.title}">{$srs.title}</a></li>
+    <?php } ?>
+  </ul>
+</div>

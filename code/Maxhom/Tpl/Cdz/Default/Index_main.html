@@ -1,0 +1,80 @@
+ 
+<body>
+	<div id="cd_main">
+		<!-- <header>
+			<a href="../index.html" class="back">返回</a>
+			<p>亿星启</p>
+		</header> -->
+		<div class="container">
+			<div class="head">
+				<span class="address">海岸城珠江花园天虹</span>
+				<div class="cdinfo">
+					<span>车位号：10025</span>
+					<span>慢充</span>
+				</div>	
+			</div>
+			
+			<div class="cdbtn pr">
+				<div class="pa">
+					<span>开始</span>
+					<span>充电</span>					
+				</div>
+				<span class="dcz pa">充电中...</span>
+			</div>
+
+			<ul class="detail-ul">
+				<li>
+					<span>7 <i>KW</i></span>
+					<span class="danwei">单相交流</span>
+				</li>
+				<li>
+					<span>2015 <i>国标</i></span>
+					<span class="danwei">充电接口</span>
+				</li>
+				<li>
+					<span>1.88 <i>元/度</i></span>
+					<span class="danwei">收费详情</span>
+				</li>
+				<li>
+					<span>{$userdata.amount}<i>元</i></span>
+					<span class="danwei">账号余额</span>
+				</li>
+			</ul>
+		</div>			
+	</div>
+	<div class="zzc">
+		<div class="alertbox">
+			<div>你确定要结束充电吗?</div>
+			<span class="cancel">继续充电</span>
+			<span class="ok">确定</span>
+		</div>	
+	</div>
+    
+   
+    
+	 
+</body>
+</html>
+<script>
+	$(function(){
+		var $pagein = $("#cd_main");
+
+		$pagein.on("click",".cdbtn",function(){
+			
+			var iswork = $pagein.find(".container").hasClass("on");
+
+			if(iswork){
+				$(".zzc").addClass("on");
+			}else{
+				$pagein.find(".container").addClass("on");
+			}
+		});
+
+		$(".cancel").on("click",function(){
+			$(".zzc").removeClass("on");
+		});
+		$(".ok").on("click",function(){
+			maxhom.goto("cdok.html");
+		});
+	});
+</script>

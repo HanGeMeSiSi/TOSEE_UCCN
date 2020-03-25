@@ -1,0 +1,52 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0, maximum-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="/app_static/css/bootstrap.min.css" />
+<title>消防帮</title>
+</head>
+<body>
+<div class=" navbar-fixed-top">
+  <div class="navbar-inner" style="width:100%;">
+    <div align="center"> <a class="brand" href="#"  ><img src="/app_static/images/logo.jpg" width="120px" border="0"/></a> </div>
+  </div>
+</div>
+<div  >
+<!-- content -->
+<div style="text-align:center;">
+  <div> <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+
+    <a class='btn btn-primary btn-large'<?php  $agent = $_SERVER['HTTP_USER_AGENT'];  if(strpos($agent,"MicroMessenger")) {  echo  'onClick="show()"'; }  ?> style="margin-top:10px;width:180px; background:#1D2089 url('android.png') no-repeat 10px 20px; "  href='/appapk/v1.apk'   > Android(安卓版)<br/>
+    <span   style="color:#FF9900;font-size:12px;">最新版本：V1.2.5</span> <br  />
+    <span style="font-size:12px; ">更新日期：2014-06-19</span></a> </div>
+  <a class='btn btn-primary btn-large' <?php  $agent = $_SERVER['HTTP_USER_AGENT'];  if(strpos($agent,"MicroMessenger")) {  echo  'onClick="show()"'; }  ?>   style="margin-top:20px;width:180px; background:#1D2089 url('iphone.png') no-repeat 16px 40px;"  href='https://itunes.apple.com/us/app/dian-dian-zhao-che/id894392750?l=zh&ls=1&mt=8' > AppStore（苹果版）<br/>
+  <span style="color:#FF9900 ;font-size:12px;">最新版本：1.0.0</span> <br/>
+  <span style="font-size:12px;">更新日期：2014-07-15</span></a> </div>
+<h4 align="center">
+  <p style="color:red; height:28px; line-height:28px;">下载、安装、注册</p>
+  <p style="color:#0000FF; height:28px; line-height:28px;">开启全新的旅程</p>
+</h4>
+<?php
+$agent = $_SERVER['HTTP_USER_AGENT']; 
+		if(!strpos($agent,"MicroMessenger")) {
+			//echo '此功能只能在微信浏览器中使用';exit;
+		}
+
+?>
+<div style="float:left; top:0px; position: absolute; right:0px; z-index:99999; display:none;" id="img_display"> <img src="youjiao.png"> </div>
+<script language="javascript">
+	function show(){
+		 var ui = document.getElementById("img_display");
+    	 ui.style.display="block";
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!-- 内页banner -->
+
+<div class="n_banner"> <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" /> </div>
+<div class="neiBox">
+  <!-- 主体部分 -->
+  <div id="container" class="clearfix">
+    <div class="left">
+      <div class="box sort_menu"> <include file="Menu:down"/>
+        <script type="text/javascript">
+
+ var url   = location.pathname;
+ var urlArray = url.split("/");
+ var name = urlArray[urlArray.length-2];
+ 
+ var aboutArray1  = ["about"];
+ var about_Array2 = ["about_server"];
+ var about_Array3 = ["about_renli"];
+ 
+ if(name==aboutArray1){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160741_498.jpg");
+ }else if(name == about_Array2){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160707_178.jpg");
+ }else if(name == about_Array3){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160722_735.jpg");
+ }
+ 
+ //判断元素是否包含在数组中
+ function in_array(str,arr){
+	  for(var f1 in arr){
+		if(arr[f1] == name){
+			return true;
+		 }
+	   }
+	   return false;
+  }
+
+ </script>
+        <script type="text/javascript">
+$(function(){
+	$(".sort > li:eq(0)").addClass("current2");
+	var url = window.location.href;
+	$(".sort > li").each(function(){
+		if($(this).children('a').attr("href") == url ){
+			$(".sort>li:eq(0)").removeClass("current2");
+			$(this).addClass("current2");
+		};
+	});
+});
+</script>
+      </div>
+      <div class="box n_search"> <include file="Related:product"/>
+        <script type="text/javascript">
+			  $(function(){
+			  	$(".words li:odd").addClass("right_word");
+			  });
+			</script>
+      </div>
+    </div>
+    <div class="right">
+      <div class="sitemp clearfix">
+        <h2>售后服务 </h2>
+        <div class="site">您的当前位置： <a href="/">首 页</a>><span class="cc">{$title}</span> </div>
+      </div>
+      <div class="content">
+        <p style="margin-top: 0px; margin-bottom: 0px; text-indent: 42px; line-height: 24px;"><span style="font-family: 微软雅黑; font-size: 14px;"><br/>
+          </span></p>
+        <p style="margin-top: 0px; margin-bottom: 0px; text-indent: 42px; line-height: 24px;"><span style="font-family: 微软雅黑; font-size: 14px;">本公司创办以来，实行三级售后服务体系，已拥有一套完善的质量保证体系，公司为产品购买方建立资料档案，定期进行质量跟踪、使用回访服务。</span><br/>
+        </p>
+        <p style="margin-top: 0px; margin-bottom: 0px; line-height: 24px;"><span style="font-family: 宋体, SimSun;"><span style="font-family: 微软雅黑; font-weight: normal; font-size: 14px;"><span style="font-family: 微软雅黑;">为了更好的服务用户的需求，做好使用指导、及时提供售后服务工作，我方本着</span>“一切追求高质量、高品质、用户满意为宗旨”的精神。以“周到的服务、可靠的产品质量”为原则向用户做如下承诺：</span><span style="font-family: 微软雅黑; font-weight: normal; font-size: 18px;"><br/>
+          </span><span style="font-family: 微软雅黑; font-weight: normal; font-size: 14px;"><span style="font-family: 微软雅黑;">（</span>1）我公司的企业网站中，随时有人对<span style="font-family: 微软雅黑;">其进行</span>“驻守”，客户对产品的使用有疑问，服务人员给予迅速解<span style="font-family: 微软雅黑;">答，如需上门服务，服务人员对客户信息和客户问题进行登记，并将售后任务进行分派，提高顾客的售后满意度。</span><br/>
+          <span style="font-family: 微软雅黑;">（</span>2）当<span style="font-family: 微软雅黑;">产品出现故障时，请拨打本公司的售后服务电话</span>0755-29773208<span style="font-family: 微软雅黑;">，接到用户通知后，售后服务人员迅速作出响应，为用户排除故障。</span></span></span></p>
+        <p><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

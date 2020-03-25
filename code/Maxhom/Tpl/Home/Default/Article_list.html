@@ -1,0 +1,81 @@
+<!-- 内页banner -->
+
+<div class="n_banner">   <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" />  </div>
+<div class="neiBox">
+  <!-- 主体部分 -->
+  <div id="container" class="clearfix">
+    <div class="left">
+      <div class="box sort_menu">
+	  
+	   <include file="Menu:news"/>
+	  
+        
+        
+        <script type="text/javascript">
+$(".layer1").hover
+(
+	function()
+	{
+		if($(this).find(".layer2 li").length > 0)
+		{
+			$(this).find(".layer2").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer2").hide();
+	}
+);
+
+$(".layer2 li").hover
+(
+	function()
+	{
+		if($(this).find(".layer3 li").length > 0)
+		{
+			$(this).find(".layer3").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer3").hide();
+	}
+);
+</script>
+      </div>
+       
+     
+      <div class="box n_search">
+         <include file="Related:product"/>
+        <script type="text/javascript">
+			  $(function(){
+			  	$(".words li:odd").addClass("right_word");
+			  });
+			</script>
+      </div>
+      
+    </div>
+    <div class="right">
+      <div class="sitemp clearfix">
+        <h2> {$catname} </h2>
+        <div class="site">您的当前位置： <a href="/">首 页</a>&nbsp;>>&nbsp;<a href="{$caturl}">{$catname}</a> </div>
+      </div>
+      <div class="content">
+        <ul class="news_list clearfix">
+          <volist name="list" id="r">
+            <li>
+              <h3><a href="{$r.url}" title="{$r.title}">{$r.title}</a></h3>
+              <div> {$r.description} </div>
+              <span>发布时间：{$r.createtime|toDate=###,'Y-m-d'}&nbsp;&nbsp;&nbsp;点击次数：{$r.hits}</span> </li>
+            <hr/>
+          </volist>
+          <hr/>
+          <div class="clearboth"></div>
+        </ul>
+        <div class="pageController">
+          <div class="t1"> {$pages} </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

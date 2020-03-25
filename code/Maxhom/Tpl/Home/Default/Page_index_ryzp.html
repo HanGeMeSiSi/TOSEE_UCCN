@@ -1,0 +1,69 @@
+<!-- 内页banner -->
+
+<div class="n_banner"> <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" /> </div>
+<div class="neiBox">
+  <!-- 主体部分 -->
+  <div id="container" class="clearfix">
+    <div class="left">
+      <div class="box sort_menu"> <include file="Menu:gsjj"/>
+        <script type="text/javascript">
+
+ var url   = location.pathname;
+ var urlArray = url.split("/");
+ var name = urlArray[urlArray.length-2];
+ 
+ var aboutArray1  = ["about"];
+ var about_Array2 = ["about_server"];
+ var about_Array3 = ["about_renli"];
+ 
+ if(name==aboutArray1){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160741_498.jpg");
+ }else if(name == about_Array2){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160707_178.jpg");
+ }else if(name == about_Array3){
+	 $(".n_banner img").attr("src","/data/images/banner/20191120160722_735.jpg");
+ }
+ 
+ //判断元素是否包含在数组中
+ function in_array(str,arr){
+	  for(var f1 in arr){
+		if(arr[f1] == name){
+			return true;
+		 }
+	   }
+	   return false;
+  }
+
+ </script>
+        <script type="text/javascript">
+$(function(){
+	$(".sort > li:eq(0)").addClass("current2");
+	var url = window.location.href;
+	$(".sort > li").each(function(){
+		if($(this).children('a').attr("href") == url ){
+			$(".sort>li:eq(0)").removeClass("current2");
+			$(this).addClass("current2");
+		};
+	});
+});
+</script>
+      </div>
+      <div class="box n_search"> <include file="Related:product"/>
+        <script type="text/javascript">
+			  $(function(){
+			  	$(".words li:odd").addClass("right_word");
+			  });
+			</script>
+      </div>
+    </div>
+    <div class="right">
+      <div class="sitemp clearfix">
+        <h2>人员招聘 </h2>
+        <div class="site">您的当前位置： <a href="/">首 页</a>> <span class="cc">人员招聘</span> </div>
+      </div>
+      <div class="content">
+        <p><img src="/static/picture/1517018455903879.jpg" title="1517018455903879.jpg" alt="人事招聘图.jpg"/><img src="/static/picture/1512626974669571.png" title="1512626974669571.png" alt="微信图片_20171207133721.png"/></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+<?php
+return array ( 'case' => '75', 'server' => '96', 'company' => '86', 'xydt' => '87', 'jszcad9' => '88', 'qyjj' => '90', 'zsjj' => '91', 'ryzp' => '92', 'lxwm' => '93', 'news' => '71', 'smartapp' => '72', 'aboutus' => '73', 'cd' => '74', 'jiadian' => '76', 'chifang' => '77', 'kongkai' => '78', 'anfang' => '79', 'meirong' => '80', 'zsjm' => '81', 'shfw' => '84', 'downfile' => '85', ); ?>

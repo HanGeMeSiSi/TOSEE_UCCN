@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$seo_title}-{$site_name}</title> 
+<meta name="keywords" content="{if $seo_keywords==''}{$seo_title}{else}{$seo_keywords}{/if}" />
+<meta name="description" content="{$seo_description}" />
+<meta name="baidu-site-verification" content="57egBW5jZG" />
+<link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/model_1.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/main_1.css" />
+<script src="/static/js/jquery-1.8.3.min_1.js"></script>
+<script src="/static/js/mobile_1.js"></script>
+<script>
+   // uaredirect('/m/');
+    </script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?17fc284c5191dbb93bc5cebc15116666";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+<!-- 公共头部包含 -->
+<div class="clearboth"></div>
+<div class="top">
+  <div class="header clearfix">
+    <div class="logo fl"> <a href="/"><img alt="智能开关" src="/static/picture/20190828172742_750_1.jpg" /></a> </div>
+    <div class="top2 fr">
+      <div class="k1"> <a href="/"> 中文 </a>    <a href="javascript:void(0);" onclick="SetHome(this,window.location)">设为首页</a> | <a href="/sitemap.html">网站地图</a>   | <a href="/sitemap.xml">XML</a>   </div>
+      <!-- 导航栏包含 -->
+      <div id="menu" class="clearfix">
+        <div class="nav clearfix">
+          <ul class="fl">
+            <li><a href="/">网站首页</a></li>
+            <li><a href="/Product/list/72.html">产品中心</a>
+              <div class="sec"> 
+			  <?php $mynewlist = M("category")->where("parentid=72")->select(); foreach($mynewlist as $rs) { ?>
+           		 <dd><a href="{$rs.url}">{$rs.catname}</a></dd> 
+			<?php  } ?>
+			   </div>
+            </li>
+            <li><a href="/Page/list/81.html">招商加盟</a></li>
+            <li><a href="/Case/list/94.html">工程案例</a>
+              <div class="sec"> <a href="/Case/list/94.html">成功案例项目</a> </div>
+            </li>
+            <li><a href="/Download/list/96.html">服务支持</a>
+              <div class="sec"> <a href="/Download/list/96.html">安装指导</a> <a href="/Page/list/84.html">售后服务</a> <a href="/Download/list/85.html">下载资料</a> </div>
+            </li>
+            <li><a href="/Article/list/71.html">新闻资讯</a>
+              <div class="sec">
+			   <?php $mynewlist = M("category")->where("parentid=71")->select(); foreach($mynewlist as $rs) { ?>
+           		 <a href="{$rs.url}">{$rs.catname}</a> 
+			<?php  } ?>
+			   </div>
+            </li>
+            <li class="lxff"><a href="/Page/list/89.html">公司简介</a>
+              <div class="sec">
+			  
+			  <?php $mynewlist = M("category")->where("parentid=89")->select(); foreach($mynewlist as $rs) { ?>
+           		 <a href="{$rs.url}">{$rs.catname}</a> 
+			<?php  } ?>
+			  
+			    </div>
+            </li>
+            <li><a href="/Page/list/93.html">联系我们</a></li>
+          </ul>
+          <div class="fr k2">
+            <p><img src="/static/picture/1515132262343080_1.png" title="联系电话" alt="联系电话" width="37" height="33" style="width: 37px; height: 33px;" border="0" vspace="0"/>&nbsp;<span style="font-size: 24px;">4008897913</span></p>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+
+$(function(){
+	$('.nav ul > li').hover(function(){
+		var sec_count  = $(this).find('.sec a').length;
+		var a_height   = $(this).find('.sec a').eq(0).height();
+		var sec_height =  sec_count * a_height;
+		$(this).find('.sec').stop().animate({height:sec_height},300);
+	},function(){
+		$(this).find('.sec').stop().animate({height:0},300);
+	});
+});
+
+
+</script>
+    </div>
+  </div>
+</div>

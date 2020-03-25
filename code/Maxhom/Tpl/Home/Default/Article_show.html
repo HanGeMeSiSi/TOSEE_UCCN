@@ -1,0 +1,111 @@
+<!-- 内页banner -->
+
+<div class="n_banner"> <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" /> </div>
+<div class="neiBox">
+  <!-- 主体部分 -->
+  <div id="container" class="clearfix">
+    <div class="left">
+      <div class="box sort_menu">
+       <include file="Menu:news"/>
+        <script type="text/javascript">
+$(".layer1").hover
+(
+	function()
+	{
+		if($(this).find(".layer2 li").length > 0)
+		{
+			$(this).find(".layer2").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer2").hide();
+	}
+);
+
+$(".layer2 li").hover
+(
+	function()
+	{
+		if($(this).find(".layer3 li").length > 0)
+		{
+			$(this).find(".layer3").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer3").hide();
+	}
+);
+</script>
+      </div>
+       
+      <div class="box n_search">
+        <include file="Related:product"/>
+        <script type="text/javascript">
+			  $(function(){
+			  	$(".words li:odd").addClass("right_word");
+			  });
+			</script>
+      </div>
+      
+    </div>
+    <div class="right">
+      <div class="sitemp clearfix">
+        <h2> 智能断路器的优势 </h2>
+        <div class="site">您的当前位置  <a href="{:URL()}">{:L(home_font)}</a> >  <YP:catpos  catid="catid" space=" &gt; " /></div>
+      </div>
+      <div class="content">
+        <!-- 新闻详细 -->
+        <div class="news_detail">
+          <h1 class="title">智能断路器的优势</h1>
+          <div class="info_title clearfix">
+            <h3 class="title_bar"> 发布日期：<span>{$createtime|toDate=###,"Y/m/d"}</span> 来源：<span>http://www.sztosee.com</span> 点击：<span>
+             {$hits}
+              </span> </h3>
+            <div class="share">
+              <!-- Baidu Button BEGIN -->
+              <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_tsina"></a> <a class="bds_qzone"></a> <a class="bds_tqq"></a> <a class="bds_hi"></a> <a class="bds_qq"></a> <a class="bds_tieba"></a> <span class="bds_more">更多</span> <a class="shareCount"></a> </div>
+              <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6513684" ></script>
+              <script type="text/javascript" id="bdshell_js"></script>
+              <script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+              <!-- Baidu Button END -->
+            </div>
+          </div>
+          <div class="content">
+            {$content}
+          </div>
+         
+          <div class="page">
+		   <?php
+		$Model = new Model();
+		
+		$mym = "Article";
+		$sql = "SELECT Max(id) as max_id FROM maxhom_$mym WHERE id<$id limit 1";
+		$res = $Model->query($sql);
+		$max_id = intval($res[0]['max_id']);
+		$prevrow = M($mym)->field('id,title')->where("id=$max_id")->find();
+		$prev_id= intval($prevrow['id']);
+		
+		
+		$sql = "SELECT MIN(id) as min_id FROM maxhom_$mym WHERE id>$id limit 1";
+		$res = $Model->query($sql);
+		$min_id = intval($res[0]['min_id']);
+		$nextrow = M($mym)->field('id,title')->where("id=$min_id")->find();
+		$next_id = intval($nextrow['id']);
+		 
+	  ?>
+          <div class="page">上一篇：<a href="/Article/show/<?php echo $prev_id?>.html"><?php echo $prevrow['title'];?></a><br />
+            下一篇：<span><a href="/Article/show/<?php echo $next_id?>.html"><?php echo $nextrow['title'];?></a></span></div>
+		  
+		  </div>
+        </div>
+        <!-- 相关产品和相关新闻 -->
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

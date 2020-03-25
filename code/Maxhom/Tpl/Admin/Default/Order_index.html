@@ -1,0 +1,112 @@
+
+
+<table  class="search_table" width="100%">
+	<tr>
+		<td class="search">
+			<form action="{:U($module_name.'/index')}" method="get">
+			<input type="hidden" name="g" value="{$Think.GROUP_NAME}" />
+			<input type="hidden" name="m" value="{$Think.MODULE_NAME}" />
+			<input type="hidden" name="a" value="{$Think.ACTION_NAME}" />	
+
+			<input id="title" type="text" class="input-text" name="keyword" value="{$Think.get.keyword}" />
+			<select name="searchtype">
+			<option value="sn" <eq  name="searchtype" value='sn'>selected="selected"</eq>>{:L('order_sn')}</option>
+		  	<option value="consignee" <eq name="searchtype" value='consignee'>selected="selected"</eq>>{:L('realname')}</option>
+		<!--	<option value="username" <eq name="searchtype" value="username">selected="selected"</eq>>{:L('username')}</option>-->
+			<!--<option value="userid" <eq name="searchtype" value="userid">selected="selected"</eq>>{:L('userid')}</option>
+	  		<option value="id" <eq name="searchtype" value='id'>selected="selected"</eq>>ID</option>-->
+			</select>
+ 
+ 
+			<select id="order_status" name="map[order_status]">
+			<option value="">{:L('order_status')}</option>			 
+			<option value="0" <if condition="isset($order_status) && $order_status ==0">selected="selected"</if>>未付款</option>
+			<option value="1" <if condition="isset($order_status) && $order_status ==1">selected="selected"</if>>已付款、未发货</option>
+			<option value="2" <if condition="isset($order_status) && $order_status ==2">selected="selected"</if>>已发货、未收货</option>
+			<option value="3" <if condition="isset($order_status) && $order_status ==3">selected="selected"</if>>已收货、未评价</option>
+			<option value="4" <if condition="isset($order_status) && $order_status ==4">selected="selected"</if>>已评价</option>
+            <option value="5" <if condition="isset($order_status) && $order_status ==4">selected="selected"</if>>取消订单</option>
+            <option value="6" <if condition="isset($order_status) && $order_status ==4">selected="selected"</if>>删除订单</option>
+			</select>
+ 
+		 
+			
+			<select id="warn_status" name="map[warn_status]">
+			<option value="" >提醒状态</option>			 
+			<option value="1">提醒发货</option>
+			
+			</select>
+			 
+			 
+			
+			<input type="hidden" id="menuid" name="menuid" value="{$_GET['menuid']}"/>
+			<input type="submit" value="{:L('chaxun')}"  class="button" />
+			<input type="reset" value="{:L('reset')}" class="button"  />
+			</form>
+		</td>
+		
+	</tr>
+</table>
+
+<form name="myform" id="myform" action="" method="post">
+
+<div class="table-list">
+    <table width="100%" cellspacing="0">
+		<thead> 
+            <tr> 
+			<th width="20"><input type="checkbox" value="" id="check_box" onclick="selectall('ids[]');"></th>          
+          <!--   <th width="30">ID</th>  -->
+			<th width="110"  align="left">{:L('order_sn')}</th> 
+            <th width="80" align="left">{:L('price')}</th> 
+            <th width="60" align="left">{:L('realname')}</th>
+			<th width="100">{:L("order_status")}</th>
+            <th>{:L('createtime')}</th> 
+			<th width="152">{:L('manage')}</th> 
+            </tr> 
+        </thead> 
+      	<tbody>
+      		<volist name="list" id="vo" key="k">
+      		<tr>
+			<td align="center"><input class="inputcheckbox " name="ids[]" value="{$vo['id']}" type="checkbox" ></td>
+		<!--  	<td align="center">{$vo['id']}</td>-->
+      		<td>{$vo.sn}</td>
+			<td><font color="red">{$vo.order_amount|number_format=###,2}</font></td>
+      		<td >{$vo['consignee']}</td>
+			<td align="center"><?php
+            	if($vo['order_status'] == 0){
+                	$s = "未付款";
+                }else if($vo['order_status'] == 1){
+                	$s = "已付款、未发货";
+                }else if($vo['order_status'] == 2){
+                	$s = "已发货、未收货";
+                }else if($vo['order_status'] == 3){
+                	$s = "已收货、未评价";
+                }else if($vo['order_status'] == 4){
+                	$s = "已评价";
+                }else if($vo['order_status'] == 5){
+                	$s = "取消订单";
+                }else if($vo['order_status'] == 6){
+                	$s = "删除订单";
+                }
+                
+                echo $s;
+            ?> </td> 
+			 
+      		<td align="center">{$vo['add_time']|toDate=###,'Y-m-d H:i:s'}</td>			
+			<td align="center"><a href="{:U($module_name.'/show',array(id=>$vo['id']))}">{:L('edit')}</a> | <a href="javascript:confirm_delete('{:U($module_name.'/delete',array(id=>$vo['id']))}')">{:L('delete')}</a></td>      		
+      		</tr>
+      		</volist>
+      	</tbody>
+    </table>
+  
+    <div class="btn"><input type="button" class="button" name="dosubmit" value="<?php echo L('delete')?>" onclick="myform.action='{:U($module_name.'/deleteall')}';return confirm_deleteall()"/> <input  type="button" class="button" name="dosubmit" value="<?php echo L('listorder')?>" onclick="myform.action='{:U($module_name.'/listorder')}';$('#myform').submit();" /></div> 
+
+</form></div>    
+
+<div id="pages" class="page">{$page}</div>
+<script>
+$("#catid").attr("value",'{$catid}');
+function confirm_deleteall(){
+	art.dialog.confirm("{:L('real_delete')}", function(){ $('#myform').submit();});
+}
+</script>
