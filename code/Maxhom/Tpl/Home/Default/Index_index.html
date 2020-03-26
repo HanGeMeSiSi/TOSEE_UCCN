@@ -1,5 +1,188 @@
 <!-- 首页banner -->
 
+<style>
+  .chanping_center{
+   margin-top: 20px;
+   margin-bottom: 20px;
+  }
+  .chanping_center .big_title,.yingyong_fw .big_title{
+    color: #000000;
+    font-size: 38px;
+    text-align: center;
+    background: url(/static/Images/titline_1.png) no-repeat bottom center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+  .chanping_center .chanping_content{
+
+  }
+  .chanping_center .chanping_content .cp_item{
+    padding: 20px;
+    cursor: pointer;
+  }
+  .chanping_center .chanping_content .cp_item:hover .cp_item_name{
+    background-color: #e87518;
+  }
+  .chanping_center .chanping_content .cp_item .cp_item_name{
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    background-color: #515151;
+    color:#fff;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .chanping_center .chanping_content .cp_item:hover .cp_item_img img{
+    width: 100%;
+  }
+  .chanping_center .chanping_content .cp_item .cp_item_img img{
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top:55%;
+    width: 90%;
+    transition: all 0.3s linear;
+  }
+  .chanping_center .chanping_content .cp_item .cp_item_img{
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .yingyong_content{
+    margin: 0 auto;
+  }
+  .hanhan-div-swiper{
+    position: relative;
+    width: 100%;
+    height: 100%;    
+    overflow: hidden;
+  }
+  .hanhan-div-swiper .hanhan-sw-neirong{
+    font-size: 0;
+    height: 75%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .hanhan-div-swiper .roll1 .ta1>p{
+    height: 100%;
+  }
+  .hanhan-div-swiper .roll1 .ta1 img{
+    width: 100%;
+    height: 100%;
+  }
+  /* .hanhan-div-swiper .roll1 .ta2>p{
+    width:100%;
+  } */
+  .hanhan-div-swiper .roll1 .ta1{width:70%;height:100%;display:inline-block;}
+  .hanhan-div-swiper .roll1 .ta2{width:30%;height:100%;display:inline-block;}
+  .hanhan-div-swiper .roll1 .ta2>p:nth-child(1)>span:nth-child(1){font-size: 30px;}
+  .hanhan-div-swiper .roll1 .ta2>p:nth-child(1)>span:nth-child(2){font-size: 24px;}
+  .hanhan-div-swiper .roll1 .ta2>p:nth-child(2){font-size: 18px;text-indent:2em;}
+  .hanhan-div-swiper .roll1{
+    height: 100%;
+    width:100%;
+    display:flex;
+  }
+  .hanhan-div-swiper .hanhan-sw-neirong .hanhan-sw-neirong-item{
+    display: inline-block;
+    font-size: 14px;
+    /* background-color: #ccc; */
+    height: 100%;
+    overflow: hidden;
+  }
+  .hanhan-div-swiper .hanhan-sw-nav{
+    box-sizing: border-box;
+    height: 25%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item .tab_title{
+    font-size: 20px;
+  }
+  .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item:hover{
+    color: #f69b24;
+  }
+  .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item img{
+    position: absolute;
+    left:42%;
+    top: 40%;
+  }
+  .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item .number{
+    font-size: 30px;
+    position: relative;
+    /* background: url(/static/images/bj3_1.png) no-repeat right; */
+  }
+  .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item>div{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+  }
+  .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item.active{
+    border-bottom: 4px solid #f69b24;
+  }
+  .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-right: 1px solid #c5c5c5;
+    /* border-bottom: 1px solid #c5c5c5; */
+    /* background-color: #000; */
+    position: relative;
+    color: #242424;
+    cursor: pointer;
+    width: 14.2856%;
+    text-align: center;
+
+  }
+  @media screen and (max-width: 767px) {  
+    .chanping_center .chanping_content .cp_item .cp_item_img{
+      height: 350px;
+      width: 70%;
+    }
+    .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item .tab_title{
+      font-size: 12px;
+    }   
+    .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item .number img{
+      display: none;
+    }
+    .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item .number{
+      font-size: 14px;
+    }
+    .chanping_center .chanping_content .cp_item .cp_item_name{
+      width: 70%;
+      margin: 0 auto;
+    }
+    .hanhan-div-swiper .roll1 .ta2{
+      padding: 20px;
+    }
+    .hanhan-div-swiper .roll1 .ta2>p{
+      font-size: 16px;
+      white-space: normal;
+    }
+    .hanhan-div-swiper .roll1 .ta2>p:nth-child(1){line-height: 1em;}
+    .hanhan-div-swiper .roll1 .ta2>p:nth-child(1)>span:nth-child(1){font-size: 0.8em;}
+    .hanhan-div-swiper .roll1 .ta2>p:nth-child(1)>span:nth-child(2){font-size: 0.6em;}
+    .hanhan-div-swiper .roll1 .ta2>p:nth-child(2){font-size: 0.4em;text-indent:0.2em;line-height: 16px;padding-top: 8px;}
+  }
+  @media screen and (min-width: 768px){
+    .chanping_center .chanping_content .cp_item .cp_item_img{
+      height: 255px;
+      width: 100%;
+    }
+    .yingyong_fw{
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  
+</style>
 <div class="topbanner">
   <!-- <div class="banner">
     <ul class="bb clearfix">
@@ -52,135 +235,342 @@
     <div class="fr" style="margin-top:5px;"> <a href="/Page/list/93.html"> <img src="/static/picture/lianxi_1.jpg" alt="" /> </a> </div>
   </div>
 </div>
-<div class="nei2">
-  <div class="container">
-    <div class="nei2tit"> 产品中心 </div>
-    <div class="nei2Con">
-      <ul class="product_listN2 clearfix">
-        <YP:list name="Product" order="listorder desc,updatetime desc,id desc" where="posid=1"  limit="4" >
-          <li> <a href="{$r.url}" title="{$r.title}" target="_blank" class="img"><img src="{$r.thumb}" alt="{$r.title}" /></a>
-            <h3><a href="{$r.url}" title="{$r.title}" target="_blank">{$r.title}</a></h3>
-          </li>
-        </yp:list>
-      </ul>
+  <!-- 产品中心 -->
+<div class="container">
+  <div class="chanping_center">
+    <div class="big_title">产品中心</div>
+    <!-- 产品内容 -->
+    <div class="chanping_content row">
+      <YP:list name="Product" order="listorder desc,updatetime desc,id desc" where="posid=1"  limit="4" >
+        <div class="cp_item col-sm-3" data-url="{$r.url}" 
+          onclick="(function(e){
+            let newurl = $(e).data().url;
+            let nowpath = window.location.pathname;
+            if(nowpath !== newurl){
+              window.location.href = newurl;
+            }
+          })(this)"
+        >
+          <div class="cp_item_img">
+            <img src="{$r.thumb}" alt="{$r.title}">
+          </div>
+          <div class="cp_item_name">{$r.title}</div>
+        </div>
+      </yp:list>
     </div>
-    <div class="nei2Box">
-      <div class="nei2tit"> 应用范围 </div>
-      <div id="tabs_box">
-        <div id="tabs-body" class="tabs-body clearfix">
-          <div style="display:block;">
-            <div class="roll1 clearfix">
-              <div class="fl ta1">
-                <p><img src="/static/picture/1515142345502643_1.jpg" title="智慧学校" alt="智慧学校" width="857" height="407" border="0" vspace="0" style="width: 857px; height: 407px;"/></p>
+  </div>
+  <!-- 应用范围 -->
+  <div class="yingyong_fw"> 
+    <div class="big_title">应用范围</div>
+    <div class="yingyong_content" id="yingyong_content">
+      <div class="hanhan-div-swiper">
+        <div class="hanhan-sw-neirong">
+          <div class="hanhan-sw-neirong-item">
+            <div class="roll1">
+              <div class="ta1">
+                <p><img src="/static/picture/1515142345502643_1.jpg" title="智慧学校" alt="智慧学校" vspace="0" /></p>
               </div>
-              <div class="fr ta2">
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 33px;">01&nbsp;</span><span style="font-size: 25px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">智慧学校</span></p>
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;"></span>智能电源管理，智慧教室，智慧会议室，随时查看校园监控情况，管理员集中管控，分权限管理。</p>
-              </div>
-            </div>
-          </div>
-          <div style="display:none;">
-            <div class="roll1 clearfix">
-              <div class="fl ta1">
-                <p><img src="/static/picture/1515125088988957_1.jpg" title="智慧酒店" alt="智慧酒店" width="857" height="407" border="0" vspace="0" style="width: 857px; height: 407px;"/></p>
-              </div>
-              <div class="fr ta2">
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 33px;">02&nbsp;</span><span style="font-size: 25px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">智慧酒店</span></p>
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;"></span>实时监测客房状态、宾客需求、服务状况及设备情况，极好的智慧睡眠体验，提高入住率。<span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;"></span></p>
-                <p style="white-space: normal;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></p>
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;"><img src="/static/picture/1506307224104309_1.png" title="1506307224104309.png" alt="more.png"/></span></p>
+              <div class="ta2">
+                <p>
+                  <span>01</span>
+                  <span>智慧学校</span>
+                </p>
+                <p>
+                  智能电源管理，智慧教室，智慧会议室，随时查看校园监控情况，管理员集中管控，分权限管理。
+                </p>
+                <p style="white-space: normal;">
+                  <img src="/static/picture/1506307224104309_1.png"alt="more.png"/>
+                </p>
               </div>
             </div>
           </div>
-          <div style="display:none;">
-            <div class="roll1 clearfix">
-              <div class="fl ta1">
-                <p><img src="/static/picture/1567475844692936_1.jpg" title="智慧医院" alt="智慧医院" width="857" height="407" border="0" vspace="0" style="width: 857px; height: 407px;"/></p>
+          <div class="hanhan-sw-neirong-item">
+            <div class="roll1">
+              <div class="ta1">
+                <p><img src="/static/picture/1515125088988957_1.jpg" title="智慧酒店" alt="智慧酒店" vspace="0"/></p>
               </div>
-              <div class="fr ta2">
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 33px;">03&nbsp;</span><span style="font-size: 25px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">智慧医院</span></p>
-                <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span><span style="font-size: 14px;">监控所有电器设备的负载能耗，以及一切的故障情况等，合理分配各线路负载均衡用电，防止电器火灾等，确保医院和病患的用电安全。</span></p>
-              </div>
-            </div>
-          </div>
-          <div style="display:none;">
-            <div class="roll1 clearfix">
-              <div class="fl ta1">
-                <p><img src="/static/picture/1567475559539070_1.jpg" title="智慧银行" alt="智慧银行" width="857" height="407" border="0" vspace="0" style="width: 857px; height: 407px;"/></p>
-              </div>
-              <div class="fr ta2">
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 33px;">04&nbsp;</span><span style="font-size: 25px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">智慧银行</span></p>
-                <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span><span style="font-size: 14px;">合理分配各线路的均衡用电，远程控制所有开关，防止产生待机功耗，限电设置、断电保护功能和断电报警功能，能在第一时间发出警报，防止断电监控失效而导致的人身安全和财产损失。</span><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></p>
-                <p style="white-space: normal;"><span style="font-size: 14px;"><img src="/static/picture/1506307485123802_1.png" title="1506307485123802.png" alt="more.png"/></span></p>
+              <div class="ta2">
+                <p>
+                  <span>02</span>
+                  <span>智慧酒店</span>
+                </p>
+                <p>
+                  实时监测客房状态、宾客需求、服务状况及设备情况，极好的智慧睡眠体验，提高入住率。
+                </p>
+                <p style="white-space: normal;">
+                  <img src="/static/picture/1506307224104309_1.png"alt="more.png"/>
+                </p>
               </div>
             </div>
           </div>
-          <div style="display:none;">
-            <div class="roll1 clearfix">
-              <div class="fl ta1">
-                <p><img src="/static/picture/1567476051766588_1.jpg" title="智能油站" alt="智能油站" width="857" height="407" border="0" vspace="0" style="width: 857px; height: 407px;"/></p>
+          <div class="hanhan-sw-neirong-item">
+            <div class="roll1">
+              <div class="ta1">
+                <p><img src="/static/picture/1567475844692936_1.jpg" title="智慧医院" alt="智慧医院" vspace="0"/></p>
               </div>
-              <div class="fr ta2">
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 33px;">05&nbsp;</span><span style="font-size: 25px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">智能油站</span></p>
-                <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span><span style="font-size: 14px;">智慧空开有雷电保护装置，在高压雷电攻击时能自行断电，雷电过后五秒可恢复自动送电，防止因雷电攻击导致的财产损失和人身安全。高灵敏漏电保护装置、高性能的智慧开关故障预判功能，在没有发生事故前，就可以提前预判故障信息，及时找出故障点排除隐患。</span><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></p>
-                <p style="white-space: normal;"><span style="font-size: 14px;"><img src="/static/picture/1506307485123802_1.png" title="1506307485123802.png" alt="more.png"/></span></p>
-              </div>
-            </div>
-          </div>
-          <div style="display:none;">
-            <div class="roll1 clearfix">
-              <div class="fl ta1">
-                <p><img src="/static/picture/1515124935814909_1.jpg" title="智能家居" alt="智能家居" width="857" height="407" border="0" vspace="0" style="width: 857px; height: 407px;"/></p>
-              </div>
-              <div class="fr ta2">
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 33px;">06&nbsp;</span><span style="font-size: 25px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">智能家居</span></p>
-                <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span><span style="font-size: 14px;">门窗控制，灯光控制，电器控制，安防监控，环境监测。</span></p>
+              <div class="ta2">
+                <p>
+                  <span>03</span>
+                  <span>智慧医院</span>
+                </p>
+                <p>
+                  监控所有电器设备的负载能耗，以及一切的故障情况等，合理分配各线路负载均衡用电，防止电器火灾等，确保医院和病患的用电安全。
+                </p>
+                <p style="white-space: normal;">
+                  <img src="/static/picture/1506307224104309_1.png"alt="more.png"/>
+                </p>
               </div>
             </div>
           </div>
-          <div style="display:none;">
-            <div class="roll1 clearfix">
-              <div class="fl ta1">
-                <p><img src="/static/picture/1567476197582122_1.jpg" title="基站用电" alt="基站用电" width="857" height="407" border="0" vspace="0" style="width: 857px; height: 407px;"/></p>
+          <div class="hanhan-sw-neirong-item">
+            <div class="roll1">
+              <div class="ta1">
+                <p><img src="/static/picture/1567475559539070_1.jpg" title="智慧银行" alt="智慧银行" vspace="0"/></p>
               </div>
-              <div class="fr ta2">
-                <p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 33px;">07&nbsp;</span><span style="font-size: 25px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">基站用电</span></p>
-                <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span><span style="font-size: 14px;">未来5G基站的建设规模非常庞大，为了信号的可靠性，每百米需要一个站点，对电气安全监控将会要求更高，智慧空开产品将会为5G基站的建设可靠安全用电做出保障及贡献。</span><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></p>
-                <p style="white-space: normal;"><span style="font-size: 14px;"><img src="/static/picture/1506307485123802_1.png" title="1506307485123802.png" alt="more.png"/></span></p>
+              <div class="ta2">
+                <p>
+                  <span>04</span>
+                  <span>智慧银行</span>
+                </p>
+                <p>
+                  合理分配各线路的均衡用电，远程控制所有开关，防止产生待机功耗，限电设置、断电保护功能和断电报警功能，能在第一时间发出警报，防止断电监控失效而导致的人身安全和财产损失。
+                </p>
+                <p style="white-space: normal;">
+                  <img src="/static/picture/1506307224104309_1.png"alt="more.png"/>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hanhan-sw-neirong-item">
+            <div class="roll1">
+              <div class="ta1">
+                <p><img src="/static/picture/1567476051766588_1.jpg" title="智能油站" alt="智能油站" vspace="0" /></p>
+              </div>
+              <div class="ta2">
+                <p>
+                  <span>05</span>
+                  <span>智能油站</span>
+                </p>
+                <p>
+                  智慧空开有雷电保护装置，在高压雷电攻击时能自行断电，雷电过后五秒可恢复自动送电，防止因雷电攻击导致的财产损失和人身安全。高灵敏漏电保护装置、高性能的智慧开关故障预判功能，在没有发生事故前，就可以提前预判故障信息，及时找出故障点排除隐患。
+                </p>
+                <p style="white-space: normal;">
+                  <img src="/static/picture/1506307224104309_1.png"alt="more.png"/>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hanhan-sw-neirong-item">
+            <div class="roll1">
+              <div class="ta1">
+                <p><img src="/static/picture/1515124935814909_1.jpg" title="智能家居" alt="智能家居" vspace="0" /></p>
+              </div>
+              <div class="ta2">
+                <p>
+                  <span>06</span>
+                  <span>智能家居</span>
+                </p>
+                <p>
+                  门窗控制，灯光控制，电器控制，安防监控，环境监测。
+                </p>
+                <p style="white-space: normal;">
+                  <img src="/static/picture/1506307224104309_1.png"alt="more.png"/>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hanhan-sw-neirong-item">
+            <div class="roll1">
+              <div class="ta1">
+                <p><img src="/static/picture/1567476197582122_1.jpg" title="基站用电" alt="基站用电" vspace="0" /></p>
+              </div>
+              <div class="ta2">
+                <p>
+                  <span>07</span>
+                  <span>基站用电</span>
+                </p>
+                <p>
+                  未来5G基站的建设规模非常庞大，为了信号的可靠性，每百米需要一个站点，对电气安全监控将会要求更高，智慧空开产品将会为5G基站的建设可靠安全用电做出保障及贡献。
+                </p>
+                <p style="white-space: normal;">
+                  <img src="/static/picture/1506307224104309_1.png"alt="more.png"/>
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="clearboth"></div>
-        <div class="tabs clearfix">
-          <ul id="tabs" class="clearfix">
-            <li class="tab-nav-action"><a href="javascript:void(0)"><span>01 <i></i></span>智慧学校</a></li>
-            <li class="tab-nav"><a href="javascript:void(0)"><span>02 <i></i></span>智慧酒店</a></li>
-            <li class="tab-nav"><a href="javascript:void(0)"><span>03 <i></i></span>智慧医院</a></li>
-            <li class="tab-nav"><a href="javascript:void(0)"><span>04 <i></i></span>智慧银行</a></li>
-            <li class="tab-nav"><a href="javascript:void(0)"><span>05 <i></i></span>智能油站</a></li>
-            <li class="tab-nav"><a href="javascript:void(0)"><span>06 <i></i></span>智能家居</a></li>
-            <li class="tab-nav"><a href="javascript:void(0)"><span>07 <i></i></span>基站用电</a></li>
-          </ul>
+        <!-- 导航 -->
+        <div class="hanhan-sw-nav">
+          <div class="hanhan-sw-nav-item">
+            <div>
+            <span class="number">
+                <img src="/static/images/bj3_1.png" alt="">
+                01
+              </span>
+              <span class="tab_title">智慧学校</span>
+            </div>
+          </div>
+          <div class="hanhan-sw-nav-item">
+            <div>
+            <span class="number">
+                <img src="/static/images/bj3_1.png" alt="">
+                02
+              </span>
+              <span class="tab_title">智慧酒店</span>
+            </div>
+          </div>
+          <div class="hanhan-sw-nav-item">
+            <div>
+            <span class="number">
+                <img src="/static/images/bj3_1.png" alt="">
+                03
+              </span>
+              <span class="tab_title">智慧医院</span>
+            </div>
+          </div>
+          <div class="hanhan-sw-nav-item">
+            <div>
+            <span class="number">
+                <img src="/static/images/bj3_1.png" alt="">
+                04
+              </span>
+              <span class="tab_title">智慧银行</span>
+            </div>
+          </div>
+          <div class="hanhan-sw-nav-item">
+            <div>
+            <span class="number">
+                <img src="/static/images/bj3_1.png" alt="">
+                05
+              </span>
+              <span class="tab_title">智能油站</span>
+            </div>
+          </div>
+          <div class="hanhan-sw-nav-item">
+            <div>
+            <span class="number">
+                <img src="/static/images/bj3_1.png" alt="">
+                06
+              </span>
+              <span class="tab_title">智能家居</span>
+            </div>
+          </div>
+          <div class="hanhan-sw-nav-item">
+            <div>
+            <span class="number">
+                <img src="/static/images/bj3_1.png" alt="">
+                07
+              </span>
+              <span class="tab_title">基站用电</span>
+            </div>
+          </div>
         </div>
+        
       </div>
-      <script type="text/javascript">
-    $(function(){
-        $("#tabs li").on("hover", function(){
-            var index = $(this).index();
-            var divs = $("#tabs-body > div");
-            $(this).parent().children("li").attr("class", "tab-nav");//将所有选项置为未选中
-            $(this).attr("class", "tab-nav-action"); //设置当前选中项为选中样式
-            divs.hide();//隐藏所有选中项内容
-            divs.eq(index).show(); //显示选中项对应内容
-        });
- 
-    });
-</script>
     </div>
   </div>
 </div>
-<div class="nei3">
+<script>
+  hanhanDivSwiper({
+    width:'100%',
+    height:($("#yingyong_content").width())/2.2,
+    app:"#yingyong_content",
+    // weizhi:"center",
+    count:7,
+    interval:3000,
+    time:1,
+    isAuto:true
+  });
+  // 这是hanhan的轮播块
+  /******
+  * obj.width  @整个轮播的宽
+  * obj.height  @整个轮播的高
+  * obj.app  @父级
+  // * obj.weizhi  @center居中
+  * obj.count  @个数
+  * obj.interval  @自动间隔
+  * obj.time  @渐变时间
+  * obj.isAuto  @是否自动播放
+  ******/
+  function hanhanDivSwiper(obj){
+    let S_width = obj["width"];
+    let S_heigth = obj["height"];
+    let S_app = obj["app"];
+    // let S_weizhi = obj["weizhi"];
+    let S_count = obj["count"];
+    let n_nr = $(S_app).find(".hanhan-sw-neirong");
+    let n_nr_item = $(S_app).find(".hanhan-sw-neirong-item");
+    let b_nav = $(S_app).find(".hanhan-sw-nav");
+    let hanhanSW =$(S_app).find(".hanhan-div-swiper");
+    // 是否开始轮播
+    let isStart=true;
+    // 是否自动播放
+    let isAuto = obj['isAuto'];
+    $(S_app).mouseenter(()=>{
+      isStart=false;
+    });
+    $(S_app).mouseleave(()=>{
+      isStart=true;
+    });
+    // 间隔
+    let interval = obj["interval"];
+    // 单次渐变时长
+    let S_time = obj["time"];
+    // if(S_weizhi == "center"){
+    //   $(S_app).css({
+    //     margin:"0 auto"
+    //   })
+    // }
+    $((b_nav.find('.hanhan-sw-nav-item'))[0]).addClass("active");
+    b_nav.find('.hanhan-sw-nav-item').click((e)=>{
+      let _this = $(e.target);
+      // console.log(_this);
+      if(!_this.hasClass("hanhan-sw-nav-item")){
+        return
+      }
+      _this.siblings().removeClass("active");
+      _this.addClass("active"); 
+    });
+    $(S_app).css({
+      height:S_heigth,
+      width:S_width
+    });
+    // console.log(hanhanSW.width());
+    n_nr.css({
+      width:hanhanSW.width()*S_count,
+      transition: `all ${S_time}s linear`
+    });
+    n_nr_item.css({
+      width:hanhanSW.width()
+    });
+    setInterval(()=>{
+      // 当前是第几个
+      let nowIndex = b_nav.find(".hanhan-sw-nav-item.active").index();
+      n_nr.css({
+        left:-nowIndex*hanhanSW.width()
+      })
+    },100);
+    
+    setInterval(()=>{
+      if(!isAuto){
+        return
+      }
+      if(!isStart){
+        return
+      }
+      let all_items = b_nav.find(".hanhan-sw-nav-item");
+      let nowIndex = b_nav.find(".hanhan-sw-nav-item.active").index();
+      $(all_items[nowIndex]).removeClass("active");
+      if(nowIndex == all_items.length-1){
+        // alert(123)
+        $(all_items[0]).addClass("active");
+      }else{
+        $(all_items[nowIndex+1]).addClass("active");
+      }
+    },interval);
+  }
+</script>
+<!-- <div class="nei3">
   <p><a href="/Page/list/91.html" target="_blank" title="招商加盟"><img src="/static/picture/1567476880631647_1.jpg" title="招商加盟" alt="招商加盟" width="1920" height="242" border="0" vspace="0" style="width: 1920px; height: 242px;"/></a></p>
 </div>
 <div class="nei4">
@@ -197,8 +587,6 @@
       </li>
 	 </yp:list>  
 	  
-	  
-      
     </ul>
     <div class="nei2tit"> 关于我们 </div>
     <div class="nei4Con clearfix">
@@ -233,4 +621,4 @@
 	   
 	   </div>
   </div>
-</div>
+</div> -->

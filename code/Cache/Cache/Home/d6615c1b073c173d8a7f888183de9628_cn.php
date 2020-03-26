@@ -367,15 +367,16 @@
   <div id="container" class="clearfix">
     <div class="left">
       <div class="box sort_menu">
-        <h3>产品中心</h3>
-        <ul class="sort">
-          <?php $n=0;foreach($Categorys as $key=>$r):if( $r['ismenu']==1 && intval(72)==$r["parentid"] ) :++$n;?><li class="layer1"> <a href="<?php echo ($r["url"]); ?>" class="list_item"><?php echo ($r["title"]); ?></a>
-              <div class="layer2" style="display:none;">
-                <ul>
-                </ul>
-              </div>
-            </li><?php endif; endforeach;?>
+        <h3>新闻中心</h3>
+<ul class="sort">
+  <?php $n=0;foreach($Categorys as $key=>$r):if( $r['ismenu']==1 && intval(71)==$r["parentid"] ) :++$n;?><li class="layer1"> <a href="<?php echo ($r["url"]); ?>" class="list_item"><?php echo ($r["catname"]); ?></a>
+      <div class="layer2" style="display:none;">
+        <ul>
         </ul>
+      </div>
+    </li><?php endif; endforeach;?>
+</ul>
+
         <script type="text/javascript">
 $(".layer1").hover
 (
@@ -408,7 +409,9 @@ $(".layer2 li").hover
 );
 </script>
       </div>
-      <div class="box n_search"> 
+       
+      <div class="box n_search">
+        
 <h3>相关产品</h3>
 <div class="content">
   <ul class="news_list words">
@@ -425,96 +428,47 @@ $(".layer2 li").hover
 			  });
 			</script>
       </div>
+      
     </div>
     <div class="right">
       <div class="sitemp clearfix">
-        <h2> <?php echo ($title); ?> </h2>
-        <div class="site">您的当前位置： <a href="<?php echo URL();?>"><?php echo L(home_font);?></a> > 
-          <?php  $arrparentid = array_filter(explode(',', $Categorys[$catid]['arrparentid'].','.$catid));foreach($arrparentid as $cid):$parsestr[] = '<a href="'.$Categorys[$cid]['url'].'">'.$Categorys[$cid]['catname'].'</a>'; endforeach;echo implode(" &gt; ",$parsestr);?>
-        </div>
+        <h2> 智能断路器的优势 </h2>
+        <div class="site">您的当前位置  <a href="<?php echo URL();?>"><?php echo L(home_font);?></a> >  <?php  $arrparentid = array_filter(explode(',', $Categorys[$catid]['arrparentid'].','.$catid));foreach($arrparentid as $cid):$parsestr[] = '<a href="'.$Categorys[$cid]['url'].'">'.$Categorys[$cid]['catname'].'</a>'; endforeach;echo implode(" &gt; ",$parsestr);?></div>
       </div>
       <div class="content">
-        <!-- 产品详细 -->
-        <link rel="stylesheet" type="text/css" href="/static/css/jquery.jqzoom.css" />
-        <script type="text/javascript" src="/static/js/jquery.jqzoom-core.js"></script>
-        <script type="text/javascript">
-$(document).ready(function() {
-	$('.jqzoom').jqzoom({
-            zoomType: 'standard',
-            lens:true,
-            preloadImages: false,
-            alwaysOn:false,
-            zoomWidth: 320,  
-            zoomHeight: 250
-        });
-});
-
-</script>
-        <div class="product_detail" id="pd1">
-          <h1 class="title"><?php echo ($title); ?></h1>
-          <div class="img clearfix"> <a href="<?php echo ($thumb); ?>" class="jqzoom" rel='gal1'  title="<?php echo ($title); ?>" > <img src="<?php echo ($thumb); ?>" class="small" title="<?php echo ($title); ?>" alt="<?php echo ($title); ?>" /> </a> </div>
-          <div class="list">
-            <ul class="list_p">
-              <li>
-                <h2>所属分类：<a href="/Product/list/<?php echo ($catid); ?>.html"><strong><?php echo ($catname); ?></strong></a></h2>
-              </li>
-              <li>点击次数：<span><?php echo ($hits); ?></span></li>
-              <li>发布日期：<span><?php echo (todate($createtime,"Y/m/d")); ?></span></li>
-              <li class="clearfix">
-                <!-- Baidu Button BEGIN -->
-                <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_qzone"></a> <a class="bds_tsina"></a> <a class="bds_tqq"></a> <a class="bds_renren"></a> <a class="bds_t163"></a> <span class="bds_more">更多</span> <a class="shareCount"></a> </div>
-                <script type="text/javascript" id="bdshare_js" data="type=tools&uid=6513684" ></script>
-                <script type="text/javascript" id="bdshell_js"></script>
-                <script type="text/javascript">
+        <!-- 新闻详细 -->
+        <div class="news_detail">
+          <h1 class="title">智能断路器的优势</h1>
+          <div class="info_title clearfix">
+            <h3 class="title_bar"> 发布日期：<span><?php echo (todate($createtime,"Y/m/d")); ?></span> 来源：<span>http://www.sztosee.com</span> 点击：<span>
+             <?php echo ($hits); ?>
+              </span> </h3>
+            <div class="share">
+              <!-- Baidu Button BEGIN -->
+              <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_tsina"></a> <a class="bds_qzone"></a> <a class="bds_tqq"></a> <a class="bds_hi"></a> <a class="bds_qq"></a> <a class="bds_tieba"></a> <span class="bds_more">更多</span> <a class="shareCount"></a> </div>
+              <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6513684" ></script>
+              <script type="text/javascript" id="bdshell_js"></script>
+              <script type="text/javascript">
 document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
 </script>
-                <!-- Baidu Button END -->
-              </li>
-            </ul>
-          </div>
-          <div class="clearboth"></div>
-          <style type="text/css">
-      .p_detail {margin-top: 10px;}
-      .p_detail ul {height: 30px;line-height: 30px;background: #eee;border:1px solid #ddd;}
-      .p_detail ul li{float: left;width: 100px;line-height:30px;text-align:center;cursor: pointer;}
-      .p_detail ul li:hover{background: #ddd;} 
-      .p_detail ul li.on{background: #ddd;cursor: default;}
-      .tab .content {display: none}
-      .tab .content.on {display: block;}
-    </style>
-          <div class="p_detail">
-            <ul class="tab-title">
-              <li class="on">详细介绍</li>
-              <li>说明书</li>
-              <li>安装指南</li>
-            </ul>
-            <div class="tab">
-              <div class="content on"> <?php echo ($content); ?> </div>
-              <div class="content"></div>
-              <div class="content"></div>
-              <div class="content"></div>
+              <!-- Baidu Button END -->
             </div>
           </div>
-          <?php
- $Model = new Model(); $mym = "Product"; $sql = "SELECT Max(id) as max_id FROM maxhom_$mym WHERE id<$id limit 1"; $res = $Model->query($sql); $max_id = intval($res[0]['max_id']); $prevrow = M($mym)->field('id,title')->where("id=$max_id")->find(); $prev_id= intval($prevrow['id']); $sql = "SELECT MIN(id) as min_id FROM maxhom_$mym WHERE id>$id limit 1"; $res = $Model->query($sql); $min_id = intval($res[0]['min_id']); $nextrow = M($mym)->field('id,title')->where("id=$min_id")->find(); $next_id = intval($nextrow['id']); ?>
-          <div class="page">上一篇：<a href="/Product/show/<?php echo $prev_id?>.html"><?php echo $prevrow['title'];?></a><br />
-            下一篇：<span><a href="/Product/show/<?php echo $next_id?>.html"><?php echo $nextrow['title'];?></a></span></div>
+          <div class="content">
+            <?php echo ($content); ?>
+          </div>
+         
+          <div class="page">
+		   <?php
+ $Model = new Model(); $mym = "Article"; $sql = "SELECT Max(id) as max_id FROM maxhom_$mym WHERE id<$id limit 1"; $res = $Model->query($sql); $max_id = intval($res[0]['max_id']); $prevrow = M($mym)->field('id,title')->where("id=$max_id")->find(); $prev_id= intval($prevrow['id']); $sql = "SELECT MIN(id) as min_id FROM maxhom_$mym WHERE id>$id limit 1"; $res = $Model->query($sql); $min_id = intval($res[0]['min_id']); $nextrow = M($mym)->field('id,title')->where("id=$min_id")->find(); $next_id = intval($nextrow['id']); ?>
+          <div class="page">上一篇：<a href="/Article/show/<?php echo $prev_id?>.html"><?php echo $prevrow['title'];?></a><br />
+            下一篇：<span><a href="/Article/show/<?php echo $next_id?>.html"><?php echo $nextrow['title'];?></a></span></div>
+		  
+		  </div>
         </div>
-        <script>
-$(function(){
-	$('#productnav').on('click', 'a', function(){
-		var $index=$(this).index();
-		$(this).addClass('color').siblings().removeClass('color');
-		$('#productcontent > .none').eq($index).show().siblings().hide();
-	})
-
-  $('.tab-title > li').on('click', function(){
-    $(this).addClass('on').siblings().removeClass('on');
-    var index = $(this).index();
-    $('.tab > .content').eq(index).addClass('on').siblings().removeClass('on');
-  });
-})
-</script>
+        <!-- 相关产品和相关新闻 -->
+        
+        </div>
       </div>
     </div>
   </div>
