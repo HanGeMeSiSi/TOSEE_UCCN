@@ -366,7 +366,10 @@
    margin-top: 20px;
    margin-bottom: 20px;
   }
-  .chanping_center .big_title,.yingyong_fw .big_title{
+  .chanping_center .big_title,
+  .yingyong_fw .big_title,
+  .news_center .big_title,
+  .about_us .big_title{
     color: #000000;
     font-size: 38px;
     text-align: center;
@@ -374,8 +377,48 @@
     padding-bottom: 15px;
     margin-bottom: 20px;
   }
+  .news_center .news_div_item .newsMore:hover{
+    background-color: #000;
+  }
+  .news_center .news_div_item .newsMore{
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    background-color: #b7b7b7;
+    color: #fff;
+  }
+  .news_center .news_div_item .news_time{
+    display: block;
+    color: #6a6a6a;
+    font-size: 20px;
+    padding: 15px 0;
+    padding-left: 40px;
+    background: url(/static/images/time_1.png) no-repeat left 5px ;
+  }
+  .news_center .news_div_item .news_big_title{
+    font-size: 24px;
+    display: block;
+  }
+  .news_center .news_div_item{
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .news_center{
+    margin: 30px auto;
+  }
   .chanping_center .chanping_content{
 
+  }
+  .about_us .bigshu{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .about_us .jianrong{
+    margin: 0 auto;
+    width: 80%;
   }
   .chanping_center .chanping_content .cp_item{
     padding: 20px;
@@ -490,6 +533,7 @@
     border-bottom: 4px solid #f69b24;
   }
   .hanhan-div-swiper .hanhan-sw-nav .hanhan-sw-nav-item{
+    user-select: none;
     margin-top: 20px;
     margin-bottom: 20px;
     border-right: 1px solid #c5c5c5;
@@ -531,6 +575,9 @@
     .hanhan-div-swiper .roll1 .ta2>p:nth-child(1)>span:nth-child(1){font-size: 0.8em;}
     .hanhan-div-swiper .roll1 .ta2>p:nth-child(1)>span:nth-child(2){font-size: 0.6em;}
     .hanhan-div-swiper .roll1 .ta2>p:nth-child(2){font-size: 0.4em;text-indent:0.2em;line-height: 16px;padding-top: 8px;}
+    .news_center .news_div_item{
+      width: 90%;
+    }
   }
   @media screen and (min-width: 768px){
     .chanping_center .chanping_content .cp_item .cp_item_img{
@@ -829,6 +876,60 @@
     </div>
   </div>
 </div>
+<div class="mt3">
+  <p><a href="/Page/list/91.html" target="_blank" title="招商加盟"><img src="/static/picture/1567476880631647_1.jpg" title="招商加盟" alt="招商加盟"vspace="0" style="width: 100%;"/></a></p>
+</div>
+<!-- 新闻中心 -->
+<div class="news_center row container">
+  <div class="big_title">新闻中心</div>
+  <?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where("catid in (86,87,88) and lang=1 AND status=1 ")->order("updatetime desc,id desc")->limit("4")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><div class="col-sm-6 col-xs-12 mt3"> 
+        <div class="news_div_item clearfix"> 
+          <a href="<?php echo ($r["url"]); ?>" class="fl newsImg">
+            <img src="<?php if($r['thumb']) echo $r['thumb']; else echo '/static/picture/nopic.jpg'; ?>" width="150" height="150"/>
+          </a>
+          <div class="fl"> 
+            <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>" class="news_big_title"> <?php echo (substr($r["title"],0,36)); ?> </a> 
+            <span class="news_time"> <?php echo (todate($r["createtime"],'Y-m-d')); ?></span> 
+            <a href="<?php echo ($r["url"]); ?>" class="newsMore">查看详情</a> 
+          </div>
+        </div>
+      </div><?php endforeach; endif;?>  
+</div>
+<!-- 关于我们 -->
+<div class="about_us row container">
+  <div class="big_title">关于我们</div>
+  <!-- 内容主体 -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 mt3">
+      <div style="width: 80%;margin: 0 auto;">
+        <img src="/static/picture/1567477031543944_1.jpg" alt="智能电气" title="智能电气" style="width: 100%;">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <p style="line-height: 2em; text-indent: 2em;"><span style="vertical-align:middle;font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; line-height: 1.75em; text-indent: 2em; font-size: 20px; color: rgb(0, 0, 0);">TOSEE&nbsp; 特西德</span><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 1.75em; text-indent: 2em;">&nbsp; &nbsp; &nbsp; &nbsp;<a href="/about/contact.html" target="_self"><img src="/static/picture/1506309706171438_1.png" title="1506309706171438.png" alt="a.png"/></a>&nbsp;</span></p>
+      <p style="line-height: 2em;">&nbsp;<span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp; &nbsp; &nbsp; &nbsp;深圳市特西智能电气有限公司是一家专注于物联网智慧安全用电，集产品研发、设计、制造、智慧安全用电管理系统云平台建设、销售为一体的高新技术企业。</span></p>
+      <p style="line-height: 2em;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp; &nbsp; &nbsp; &nbsp;公司基于物联网时代的到来，国家智能电网的发展和节能减排需要，五年磨一剑，研发了国内首款符合国家3C标准、集智慧安全、遥控大数据为一体的机械双金+电子双重保护智慧断路器，并通过了国家3C认证，欧盟的CE认证、深圳市计量质量检测院等认证、国家公安部检测中心智慧电气安全预警系统认证等。而且取得了发明专利、实用新型专利、软件著作权、国家知识产权管理体系等60多项专利和证书。并为用户承保了1000万的产品责任险。</span></p>
+      <p style="line-height: 2em;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp; &nbsp; &nbsp; &nbsp;特西智能是深圳市电气安全物联网协会的发起人之一，且公司有与多个高等院校开展产学研究合作，通过优势互补，达到互利共赢，校企双方联合建立“产、学、研”合作平台，如：与贵阳理工学院共建国内首个“电力大数据实验室”和“电力跨界应用实验室”。</span></p>
+      <p style="line-height: 2em;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp; &nbsp; &nbsp; &nbsp;特西电气安全用电系列产品广泛应用于住宅、写字楼、校园、学校、银行、医院、油站、酒店等多个领域，从而达到用电安全与管理的智能化。</span></p>
+      <p><span style="font-size: 14px;"></span><br/>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <div class="bigshu">
+        <p><strong><span style="color: rgb(0, 0, 0); font-size: 20px;">智控、安全、大数据</span></strong></p>
+        <p><span style="font-size: 12px; color: rgb(0, 0, 0);">远程控制，9大安全防护，提供用电侧能耗数据监测分析</span></p>
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="jianrong">
+        <p><span style="font-size: 20px;"><strong><span style="color: rgb(0, 0, 0);">简单、开放、兼容</span></strong></span></p>
+        <p><span style="font-size: 12px; color: rgb(0, 0, 0);">开放的标准化平台，扩充整合容易，系统与未来多数科技产品相容</span></p>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
   hanhanDivSwiper({
     width:'100%',
@@ -929,9 +1030,7 @@
     },interval);
   }
 </script>
-<!-- <div class="nei3">
-  <p><a href="/Page/list/91.html" target="_blank" title="招商加盟"><img src="/static/picture/1567476880631647_1.jpg" title="招商加盟" alt="招商加盟" width="1920" height="242" border="0" vspace="0" style="width: 1920px; height: 242px;"/></a></p>
-</div>
+<!--
 <div class="nei4">
   <div class="container">
     <div class="nei2tit"> 新闻中心 </div>
@@ -983,13 +1082,13 @@
 <div class="footer_div">
   <div class="foot_content">
     <div class="foot_item">
-      <div>
+      <div style="width:85%">
         <p><img src="/static/picture/1543485466481995_1.png" title="1543485466481995.png" alt="LOGO.png" width="196" height="74" style="width: 196px; height: 74px;"/></p>
         <div class="lianxi">
-          <p>深圳市宝安区沙井街道后亭学子围工业区C栋2楼</p>
-          <p>全国统一服务热线 : 4008897913</p>
-          <p>E-mail : 3310073861@qq.com</p>
-          <p>Q Q：3310073861</p>
+          <p class="mt1">深圳市宝安区沙井街道后亭学子围工业区C栋2楼</p>
+          <p class="mt1">全国统一服务热线 : 4008897913</p>
+          <p class="mt1">E-mail : 3310073861@qq.com</p>
+          <p class="mt1">Q Q：3310073861</p>
         </div>
       </div>
     </div>
