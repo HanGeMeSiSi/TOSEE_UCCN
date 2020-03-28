@@ -361,13 +361,12 @@
 
 		<!-- 内页banner -->
 
-<div class="n_banner">   <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" />   </div>
+<div class="n_banner"> <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" /> </div>
 <div class="neiBox">
   <!-- 主体部分 -->
   <div id="container" class="clearfix">
     <div class="left">
-      <div class="box sort_menu">
-          <h3> 特西电气</h3>
+      <div class="box sort_menu">  <h3> 特西电气</h3>
 <ul class="sort">
   <?php $n=0;foreach($Categorys as $key=>$r):if( $r['ismenu']==1 && intval(89)==$r["parentid"] ) :++$n;?><li class="layer1"> <a href="<?php echo ($r["url"]); ?>" class="list_item"><?php echo ($r["catname"]); ?></a>
       <div class="layer2" style="display:none;">
@@ -419,8 +418,7 @@ $(function(){
 });
 </script>
       </div>
-    
-     
+       
       <div class="box n_search">
        
 <h3>相关产品</h3>
@@ -439,48 +437,73 @@ $(function(){
 			  });
 			</script>
       </div>
-      
-      
+      <div style="display:none;" class="box n_contact">
+        <h3>联系我们</h3>
+        <div class="content n_lianxi">
+          <p><img src="/static/picture/1506395094817044.gif" title="智能配电箱" alt="智能配电箱" width="241" height="97" border="0" vspace="0" style="width: 241px; height: 97px;"/></p>
+          <p><br/>
+          </p>
+          <p style="line-height: 2em;"><span style="font-size: 14px;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">深圳市特西智能电气有限公司</span></strong></span></p>
+          <p style="line-height: 2em;"><span style="font-size: 14px;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">电话：</span></strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">0755-23202921<br/>
+            </span></span></p>
+          <p style="line-height: 2em;"><span style="font-size: 14px;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">手机：</span></strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">18928489391</span></span></p>
+          <p style="line-height: 2em;"><span style="font-size: 14px;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">邮箱：</span></strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">3310073861@qq.com</span></span></p>
+          <p style="line-height: 2em;"><span style="font-size: 14px;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">网址：</span></strong></span><a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>" target="_self" style="text-decoration: underline; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;"><?php  echo $_SERVER['SERVER_NAME']; ?></span></a><br/>
+            <span style="font-size: 14px;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">地址：</span></strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">深圳市宝安区沙井街道后亭学子围工业网C栋2楼</span></span></p>
+          <p style="line-height: 2em;"><span style="font-size: 14px;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">阿里巴巴：</span></strong></span><a href="http://szzhoushi.1688.com/" target="_blank" style="text-decoration: underline; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 12px;">http://szzhoushi.1688.com/</span></a></p>
+        </div>
+      </div>
     </div>
     <div class="right">
       <div class="sitemp clearfix">
-        <h2>招商计划 </h2>
-       <div class="site">您的当前位置： <a href="/">首 页</a>><span class="cc"><?php echo ($title); ?></span> </div>
+        <h2>企业简介 </h2>
+        <div class="site">您的当前位置： <a href="/">首 页</a>><span class="cc">企业简介</span> </div>
       </div>
       <div class="content">
-        <p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-align: justify; line-height: 28px;"><strong><span style="font-size: 20px; font-family: 微软雅黑;"></span></strong></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">行业前景：</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp;2018年因违反电气安装使用规定引发的火灾占总数的34.6%，生活用火不慎引发的占21.5%，吸烟引发的占7.3%，自燃引发的占4.8%，生产作业不慎引发的占4.1%，玩火引发的占2.9%，放火引发的占1.3%，雷击静电引发的占0.1%，其他原因引发的占17.1%，原因不明确的占4.2%，仍在调查的占2.1%，</span><strong><span style="font-size: 18px; font-family: 微软雅黑;">67起较大火灾中，37起为电气引起，4起重大火灾中，</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">就有</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">3起为电气引起！</span></strong></span></p>
-        <p style="white-space: normal; text-indent: 32px;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">根据《国务院安全生产委员会关于开展电气火灾综合治理工作的通知》（安委[2017]4号）&nbsp;、《中华人民共和国公安部关于全面推进“智慧消防”建设的指导意见》（公消[2017]297号）等通知的要求，全国省市地区陆续展开智慧式用电安全隐患监管服务系统推广工作，电气安全刻不容缓！</span></p>
-        <p style="white-space: normal; text-indent: 32px;"><br/>
+        <p style="LINE-HEIGHT: 2em"><span style="vertical-align: middle; line-height: 1.75em; text-indent: 2em; font-size: 16px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; &nbsp;深圳市特西智能电气有限公司是一家专注于物联网智慧安全用电，集产品研发、设计、制造、<a href='/product/225.html' target='_blank' class='key_tag'><font color=#136ec2><strong>智慧安全用电管理系统</strong></font></a>云平台建设、销售为一体的高新技术企业，公司旗下品牌“特西德”、“迈通”已为国内知名电气品牌。</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 公司基于物联网时代的到来，国家智能电网的发展和节能减排需要，五年磨一剑，研发了国内首款符合国家3C标准、集智慧安全、遥控大数据为一体的机械双金+电子双重保护智慧断路器，通过了国家3C认证，欧盟的CE认证、深圳市计量质量检测院等认证、国家公安部检测中心智慧电气安全预警系统认证等。并取得了发明专利、实用新型专利、软件著作权、国家知识产权管理体系等60多项专业和证书，并为用户承保了1000万的产品责任险。</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 特西电气是深圳市电气安全物联网协会的发起人之一，且公司与多个高等院校开展产学研究合作，通过优势互补，达到互利互赢。校企双方联合建立“产、学、研”合作平台，如：与贵阳理工学院共建国内首个“电力大数据实验室”和“电力跨界应用实验室”。</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 特西电气安全用电系列产品广泛应用于住宅、写字楼、校园、学校、银行、医院、油站、酒店、基站安全用电等多个领域，从而达到了用电安全与管理的智能化，致力于为社会电气火灾事故每年降低5%而努力奋斗！</span></p>
+        <p><br/>
         </p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: 微软雅黑;">加盟优势：</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1、品牌支持：免费为合作商提供品牌宣传资料等；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2、推广支持：支持网络推广、学术会议、行业展会等宣传形式宣传；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3、厂家直销：厂家直销供货，厂价更有优势，预留给合作商丰厚的利润空间；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">4、区域保护：严禁的区域市场保护政策，每一地级市仅限一家合作商；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">5、技术支持：编制项目施工方案、现场技术交流、技术人员全程提供24个小时在线咨询服务；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">6、安装培训：免费培训安装维护人员，提供工程安装技术指导；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">7、售后支持：客服中心将及时处理并解决合作商在运营中遇到的问题；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp;</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: 微软雅黑;">加盟条件：</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1、建筑、消防、设计等相关行业具有一定客户及良好的商誉和信誉，并有能力协调当地的消防部门及政府相关主管部门的单位或个人；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2、具备市场规划和开拓能力，具有良好的行业背景，并具备1年以上业务往来经历，有稳定的销售渠道，诚实守信；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3、以公司名义申请需要向本公司提供营业执照副本（复印件）、税务登记证副本（复印件）及法人代表证明（身份证复印件）等资质文件。个人申请提供有效证件（身份证复印件），以便公司备案。</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">4、在电气行业有一定的经营经验，有较强的销售团对和技术团队的优先考虑。</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp;</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: 微软雅黑;">经销商政策：</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1、独家授权经销，负责区域可以是片区、县、市、省的总经销，授权经销商只能对授权区域的项目进行产品销售和提供技术服务；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2、授权经销商需完成区域分配的业绩指标，销售按当地人口与经济情况调整（具体情况按最终合同为准），并遵守电气市场的管理要求。</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3、丰厚的后期提货奖励返点。</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp;</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: 微软雅黑;">加盟流程:</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1、加盟咨询；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2、双方资质判断和相互了解；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3、确认意向；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">4、签订合同；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">5、达成合作。</span></p>
-        <p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-align: justify; line-height: 28px;"><br/>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong>公司荣誉&nbsp;</strong></span></p>
+        <p><br/>
+        </p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 公司连续八年被深圳市质量技术监督授予&quot;产品监检质量优&quot;等荣誉称号；</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 2002年-2005年国家经济贸易委员会列入《全国城乡电网建设与改造所需要设备产品及生产推荐目录》;</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 2009年至2013年深圳产品质量监督所授权深圳市电气行业行业中唯一可使用&quot;质量跟踪产品&quot; 的标志；</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 2012年和2013年广东省名牌战略推委员会评为&quot;广东省名牌产品称号&quot;，是深圳市电气行业中唯一获得此殊荣的品牌；</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 2015年通过了二级计量保证，同年被国家质量监督检验检疫评为&quot;国家免检&quot;产品。</span></p>
+        <p><br/>
+        </p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong>企业愿景</strong></span></p>
+        <p><br/>
+        </p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 将“特西德”品牌打造成智慧能源物联网安全用电的国际知名品牌！</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 为社会电气火灾事故每年降低5%而努力奋斗！</span></p>
+        <p><br/>
+        </p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong>企业文化</strong></span></p>
+        <p><br/>
+        </p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; <span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; color: rgb(255, 0, 0);"><strong>研发为源&nbsp; 战略领先&nbsp; 客户至上</strong></span></span></p>
+        <p><br/>
+        </p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong>企业核心价值观:</strong></span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp;</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; <span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; color: rgb(255, 0, 0);"><strong>责任、诚信 、卓越！&nbsp;&nbsp;</strong></span></span></p>
+        <p><br/>
+        </p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong>董事长致辞&nbsp;</strong></span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 宝剑锋从磨砺出，梅花香自苦寒来。六年来，特西智能遵从“研发为源，战略领先，客户至上”的发展方针，致力于打造国内一流世界知名的电气产品制造商，旗下品牌“TOSEE”，“MAYTO”为全国著名商标。我们今天骄人的成绩是靠我们特西所有成员经过艰苦卓绝的奋斗取得的成果，在前行的道路上，我们秉承“追求完美，争创一流”的企业精神，恪守“诚信、创新、责任、价值”的核心价值观，励精图治，改革创新。公司拥有完整、科学的质量管理体系, 高效、顶尖的研发团队,致力于开发节能、环保、安全的智能配电设备。 产品广泛用于工业、商业、高层建筑和民用住宅等各种场所。公司依托全国的销售网络,及时为用户提供满意的售后服务及各种成套解决方案。</span></p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">&nbsp; &nbsp; 千江有水千江月。我们身处祖国飞速发展的时代，我们特西团队有信心与所有客户一起精诚团结，相互支持，取得共同的进步，共创美好辉煌的明天！</span></p>
+        <p><br/>
+        </p>
+        <p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 20px;">&nbsp; &nbsp; <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; color: rgb(255, 0, 0);"><strong>特西电气现面向全国招商加盟，期待您的强势加入！</strong></span></span></p>
+        <p style="LINE-HEIGHT: 2em"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; color: rgb(255, 0, 0); font-size: 18px;"></span></p>
+        <p style="line-height: 2em; text-align: center;"><br/>
         </p>
       </div>
     </div>

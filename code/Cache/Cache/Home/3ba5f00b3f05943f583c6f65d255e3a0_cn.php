@@ -361,15 +361,16 @@
 
 		<!-- 内页banner -->
 
-<div class="n_banner">   <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" />   </div>
+<div class="n_banner">   <img src="/static/picture/20191120160635_955.jpg" alt="新闻资讯" title="新闻资讯" />  </div>
 <div class="neiBox">
   <!-- 主体部分 -->
   <div id="container" class="clearfix">
     <div class="left">
       <div class="box sort_menu">
-          <h3> 特西电气</h3>
+	  
+	    <h3>新闻中心</h3>
 <ul class="sort">
-  <?php $n=0;foreach($Categorys as $key=>$r):if( $r['ismenu']==1 && intval(89)==$r["parentid"] ) :++$n;?><li class="layer1"> <a href="<?php echo ($r["url"]); ?>" class="list_item"><?php echo ($r["catname"]); ?></a>
+  <?php $n=0;foreach($Categorys as $key=>$r):if( $r['ismenu']==1 && intval(71)==$r["parentid"] ) :++$n;?><li class="layer1"> <a href="<?php echo ($r["url"]); ?>" class="list_item"><?php echo ($r["catname"]); ?></a>
       <div class="layer2" style="display:none;">
         <ul>
         </ul>
@@ -377,52 +378,45 @@
     </li><?php endif; endforeach;?>
 </ul>
 
+	  
+        
+        
         <script type="text/javascript">
+$(".layer1").hover
+(
+	function()
+	{
+		if($(this).find(".layer2 li").length > 0)
+		{
+			$(this).find(".layer2").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer2").hide();
+	}
+);
 
- var url   = location.pathname;
- var urlArray = url.split("/");
- var name = urlArray[urlArray.length-2];
- 
- var aboutArray1  = ["about"];
- var about_Array2 = ["about_server"];
- var about_Array3 = ["about_renli"];
- 
- if(name==aboutArray1){
-	 $(".n_banner img").attr("src","/data/images/banner/20191120160741_498.jpg");
- }else if(name == about_Array2){
-	 $(".n_banner img").attr("src","/data/images/banner/20191120160707_178.jpg");
- }else if(name == about_Array3){
-	 $(".n_banner img").attr("src","/data/images/banner/20191120160722_735.jpg");
- }
- 
- //判断元素是否包含在数组中
- function in_array(str,arr){
-	  for(var f1 in arr){
-		if(arr[f1] == name){
-			return true;
-		 }
-	   }
-	   return false;
-  }
-
- </script>
-        <script type="text/javascript">
-$(function(){
-	$(".sort > li:eq(0)").addClass("current2");
-	var url = window.location.href;
-	$(".sort > li").each(function(){
-		if($(this).children('a').attr("href") == url ){
-			$(".sort>li:eq(0)").removeClass("current2");
-			$(this).addClass("current2");
-		};
-	});
-});
+$(".layer2 li").hover
+(
+	function()
+	{
+		if($(this).find(".layer3 li").length > 0)
+		{
+			$(this).find(".layer3").show();
+		}
+	},
+	function()
+	{
+		$(this).find(".layer3").hide();
+	}
+);
 </script>
       </div>
-    
+       
      
       <div class="box n_search">
-       
+         
 <h3>相关产品</h3>
 <div class="content">
   <ul class="news_list words">
@@ -440,48 +434,25 @@ $(function(){
 			</script>
       </div>
       
-      
     </div>
     <div class="right">
       <div class="sitemp clearfix">
-        <h2>招商计划 </h2>
-       <div class="site">您的当前位置： <a href="/">首 页</a>><span class="cc"><?php echo ($title); ?></span> </div>
+        <h2> <?php echo ($catname); ?> </h2>
+        <div class="site">您的当前位置： <a href="/">首 页</a>&nbsp;>>&nbsp;<a href="<?php echo ($caturl); ?>"><?php echo ($catname); ?></a> </div>
       </div>
       <div class="content">
-        <p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-align: justify; line-height: 28px;"><strong><span style="font-size: 20px; font-family: 微软雅黑;"></span></strong></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">行业前景：</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp;2018年因违反电气安装使用规定引发的火灾占总数的34.6%，生活用火不慎引发的占21.5%，吸烟引发的占7.3%，自燃引发的占4.8%，生产作业不慎引发的占4.1%，玩火引发的占2.9%，放火引发的占1.3%，雷击静电引发的占0.1%，其他原因引发的占17.1%，原因不明确的占4.2%，仍在调查的占2.1%，</span><strong><span style="font-size: 18px; font-family: 微软雅黑;">67起较大火灾中，37起为电气引起，4起重大火灾中，</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">就有</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">3起为电气引起！</span></strong></span></p>
-        <p style="white-space: normal; text-indent: 32px;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">根据《国务院安全生产委员会关于开展电气火灾综合治理工作的通知》（安委[2017]4号）&nbsp;、《中华人民共和国公安部关于全面推进“智慧消防”建设的指导意见》（公消[2017]297号）等通知的要求，全国省市地区陆续展开智慧式用电安全隐患监管服务系统推广工作，电气安全刻不容缓！</span></p>
-        <p style="white-space: normal; text-indent: 32px;"><br/>
-        </p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: 微软雅黑;">加盟优势：</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1、品牌支持：免费为合作商提供品牌宣传资料等；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2、推广支持：支持网络推广、学术会议、行业展会等宣传形式宣传；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3、厂家直销：厂家直销供货，厂价更有优势，预留给合作商丰厚的利润空间；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">4、区域保护：严禁的区域市场保护政策，每一地级市仅限一家合作商；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">5、技术支持：编制项目施工方案、现场技术交流、技术人员全程提供24个小时在线咨询服务；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">6、安装培训：免费培训安装维护人员，提供工程安装技术指导；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">7、售后支持：客服中心将及时处理并解决合作商在运营中遇到的问题；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp;</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: 微软雅黑;">加盟条件：</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1、建筑、消防、设计等相关行业具有一定客户及良好的商誉和信誉，并有能力协调当地的消防部门及政府相关主管部门的单位或个人；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2、具备市场规划和开拓能力，具有良好的行业背景，并具备1年以上业务往来经历，有稳定的销售渠道，诚实守信；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3、以公司名义申请需要向本公司提供营业执照副本（复印件）、税务登记证副本（复印件）及法人代表证明（身份证复印件）等资质文件。个人申请提供有效证件（身份证复印件），以便公司备案。</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">4、在电气行业有一定的经营经验，有较强的销售团对和技术团队的优先考虑。</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp;</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: 微软雅黑;">经销商政策：</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1、独家授权经销，负责区域可以是片区、县、市、省的总经销，授权经销商只能对授权区域的项目进行产品销售和提供技术服务；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2、授权经销商需完成区域分配的业绩指标，销售按当地人口与经济情况调整（具体情况按最终合同为准），并遵守电气市场的管理要求。</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3、丰厚的后期提货奖励返点。</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp;</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: 微软雅黑;">加盟流程:</span></strong></span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1、加盟咨询；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2、双方资质判断和相互了解；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">3、确认意向；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">4、签订合同；</span></p>
-        <p style="white-space: normal;"><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">5、达成合作。</span></p>
-        <p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-align: justify; line-height: 28px;"><br/>
-        </p>
+        <ul class="news_list clearfix">
+          <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$r): $mod = ($i % 2 );++$i;?><li>
+              <h3><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></h3>
+              <div> <?php echo ($r["description"]); ?> </div>
+              <span>发布时间：<?php echo (todate($r["createtime"],'Y-m-d')); ?>&nbsp;&nbsp;&nbsp;点击次数：<?php echo ($r["hits"]); ?></span> </li>
+            <hr/><?php endforeach; endif; else: echo "" ;endif; ?>
+          <hr/>
+          <div class="clearboth"></div>
+        </ul>
+        <div class="pageController">
+          <div class="t1"> <?php echo ($pages); ?> </div>
+        </div>
       </div>
     </div>
   </div>

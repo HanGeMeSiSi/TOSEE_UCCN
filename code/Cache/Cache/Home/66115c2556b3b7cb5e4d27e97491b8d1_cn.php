@@ -450,13 +450,13 @@ $(".layer2 li").hover
 <div class="footer_div">
   <div class="foot_content">
     <div class="foot_item">
-      <div>
+      <div style="width:85%">
         <p><img src="/static/picture/1543485466481995_1.png" title="1543485466481995.png" alt="LOGO.png" width="196" height="74" style="width: 196px; height: 74px;"/></p>
         <div class="lianxi">
-          <p>深圳市宝安区沙井街道后亭学子围工业区C栋2楼</p>
-          <p>全国统一服务热线 : 4008897913</p>
-          <p>E-mail : 3310073861@qq.com</p>
-          <p>Q Q：3310073861</p>
+          <p class="mt1">深圳市宝安区沙井街道后亭学子围工业区C栋2楼</p>
+          <p class="mt1">全国统一服务热线 : 4008897913</p>
+          <p class="mt1">E-mail : 3310073861@qq.com</p>
+          <p class="mt1">Q Q：3310073861</p>
         </div>
       </div>
     </div>
