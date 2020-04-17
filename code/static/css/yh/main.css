@@ -127,9 +127,61 @@ body{
     width: 100%;
     /* overflow: hidden; */
 }
+#container{
+    display: flex;
+    justify-content: space-around;
+}
 #container .right{
-    
+    text-align: left;
+    width: 70%;
+    float: none;
+}
+#container .left>.box>h3{
+    padding: 0;
+    text-align: center;
+    font-size: 22px;
+    background: none;
+    color: #000;
 }
 #container .left{
-
+    text-align: left;
+    float: none;
+    width: 30%;
+    max-width: 230px;
+}
+.p_detail .content p img{
+    width: 100%;
+}
+.p_detail .content {
+    width: 100%;
+}
+.sitemp h2{
+    padding-left: 30px;
+}
+@media screen and (max-width: 767px) {
+    #container .right .product_list1 li a img{
+        width: 100%;
+        height: auto;
+    }
+    #container .right{
+        width: 100%;
+    } 
+    /* #container .left::after{
+        content: "";
+        display: block;
+        background-color: #f00;
+        z-index: 9999;
+        width: 10px;
+        height: 50px;
+        position: fixed;
+        left: 0px;
+        top: 50%;
+        border-radius: 0 10px 10px 0;
+        cursor: pointer;
+    } */
+    #container .left{
+        /* position: relative; */
+        width: 0;
+        overflow: hidden;
+    }
 }

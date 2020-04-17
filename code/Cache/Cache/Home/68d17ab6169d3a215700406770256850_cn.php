@@ -9,12 +9,12 @@
 <meta name="baidu-site-verification" content="57egBW5jZG" />
 <link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/model_1.css" />
-<link rel="stylesheet" type="text/css" href="/static/css/main_1.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/main_1.css?v1.0.0" />
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/animate.min.css">
 <link rel="stylesheet" href="/static/iconfont/iconfont.css">
 <link rel="stylesheet" href="/static/css/yh/main.css">
-<link rel="stylesheet" href="/static/css/header.css?v1.0.1">
+<link rel="stylesheet" href="/static/css/header.css?v1.0.2">
 <link rel="stylesheet" href="/static/layui/css/layui.css">
 <link rel="stylesheet" href="/static/css/footer.css?v1.0.0">
 <script src="/static/layui/layui.js"></script>
@@ -560,9 +560,22 @@ $(function(){
 
 
 <!--在线客服-->
-<!-- <link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
+<link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
 <div id="floatTools" class="float0831">
-  <div class="floatL"> <a title="关闭在线客服" class="btnCtn" id="aFloatTools_Hide" style="display: block;" onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);">收缩</a> <a title="查看在线客服" class="btnOpen" id="aFloatTools_Show" style="display: none;" onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">展开</a> </div>
+  <div class="floatL"> 
+    <a title="关闭在线客服" 
+      class="btnCtn"  
+      id="aFloatTools_Hide" 
+      style="display: block;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);"
+    >收缩</a> 
+    <a title="查看在线客服" 
+      class="btnOpen" 
+      id="aFloatTools_Show" 
+      style="display: none;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">
+    展开</a> 
+  </div>
   <div id="divFloatToolsView" class="floatR">
     <div class="tp"></div>
     <div class="cn">
@@ -586,5 +599,10 @@ $(function(){
       </ul>
     </div>
   </div>
-</div> -->
+</div>
+<script>
+  $(document).ready(()=>{
+    document.getElementById("aFloatTools_Hide").click();
+  })
+</script>
 <!-----foot end------->

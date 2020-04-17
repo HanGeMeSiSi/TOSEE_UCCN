@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo ($seo_title); ?>-<?php echo ($site_name); ?></title> 
 <meta name="keywords" content="<?php if($seo_keywords=='') : echo ($seo_title); else : echo ($seo_keywords); endif;?>" />
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui"> -->
 <meta name="description" content="<?php echo ($seo_description); ?>" />
 <meta name="baidu-site-verification" content="57egBW5jZG" />
 <link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/model_1.css" />
-<link rel="stylesheet" type="text/css" href="/static/css/main_1.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/main_1.css?v1.0.1" />
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/animate.min.css">
 <link rel="stylesheet" href="/static/iconfont/iconfont.css">
-<link rel="stylesheet" href="/static/css/yh/main.css">
-<link rel="stylesheet" href="/static/css/header.css?v1.0.1">
+<link rel="stylesheet" href="/static/css/yh/main.css?v1.0.2">
+<link rel="stylesheet" href="/static/css/header.css?v1.0.2">
 <link rel="stylesheet" href="/static/layui/css/layui.css">
 <link rel="stylesheet" href="/static/css/footer.css?v1.0.0">
 <script src="/static/layui/layui.js"></script>
@@ -516,15 +516,15 @@ $(function(){
       </div>
     </div>
   </div>
-  <!-- <div class="foot2">
+  <div class="foot2">
     <div class="footer">
       <div class="clearboth"></div>
-      <div class="copyright">
-        <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue="粤ICP备15032763号">粤ICP备15032763号</a></p>
+      <div class="copyright" id="footer_beian">
+        <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue="粤ICP备20025221号">粤ICP备20025221号</a></p>
       </div>
       
     </div>
-  </div> -->
+  </div>
 </div>
 <!--底部JS加载区域-->
 <script type="text/javascript" src="/static/js/common_1.js"></script>
@@ -537,9 +537,22 @@ $(function(){
 
 
 <!--在线客服-->
-<!-- <link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
+<link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
 <div id="floatTools" class="float0831">
-  <div class="floatL"> <a title="关闭在线客服" class="btnCtn" id="aFloatTools_Hide" style="display: block;" onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);">收缩</a> <a title="查看在线客服" class="btnOpen" id="aFloatTools_Show" style="display: none;" onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">展开</a> </div>
+  <div class="floatL"> 
+    <a title="关闭在线客服" 
+      class="btnCtn"  
+      id="aFloatTools_Hide" 
+      style="display: block;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);"
+    >收缩</a> 
+    <a title="查看在线客服" 
+      class="btnOpen" 
+      id="aFloatTools_Show" 
+      style="display: none;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">
+    展开</a> 
+  </div>
   <div id="divFloatToolsView" class="floatR">
     <div class="tp"></div>
     <div class="cn">
@@ -563,5 +576,15 @@ $(function(){
       </ul>
     </div>
   </div>
-</div> -->
+</div>
+<script>
+  (function(){
+    // if(window)
+    console.log(window.location.hostname)
+    $("#footer_beian")
+    $(document).ready(()=>{
+      document.getElementById("aFloatTools_Hide").click();
+    })
+  })()
+</script>
 <!-----foot end------->

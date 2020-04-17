@@ -223,12 +223,15 @@
 .menu-item:hover .lianxi_tanchu{
     display: block;
 }
-
+.neiBox #container{
+    margin:  0 auto;
+}
 /* ********************************** */
 
 /* 小 */
 @media screen and (max-width: 767px) {
-    .container {
+    .container,
+    .neiBox #container {
         width: 100%;
         padding: 0 5px;
     }
@@ -283,25 +286,29 @@
     }
 }
 @media screen and (min-width: 768px){
-    .container {
+    .container,
+    .neiBox #container {
         width: 750px;
     }
 }
 /* 大 */
 @media screen and (min-width: 992px){
-    .container {
+    .container,
+    .neiBox #container {
         width: 970px;
     }
 }
 /* 超大 */
 @media screen and (min-width: 1200px){
-    .container {
+    .container,
+    .neiBox #container {
         width: 1170px;
     }
 }
 /* 超级大 */
 @media screen and (min-width: 1440px){
-    .container {
+    .container,
+    .neiBox #container {
         width: 1400px;
     }
 }

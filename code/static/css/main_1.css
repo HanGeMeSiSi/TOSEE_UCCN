@@ -82,7 +82,7 @@
 .hotSearch{line-height:47px;font-weight:normal;color:#fff;font-size:16px;}
 
 /*主体样式*/
-#container{width:1200px;margin:0 auto;}
+/* #container{width:1200px;margin:0 auto;} */
 .container{
 	width:1200px;
 	margin:0 auto;

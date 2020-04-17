@@ -508,9 +508,22 @@ $(".layer2 li").hover
 
 
 <!--在线客服-->
-<!-- <link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
+<link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
 <div id="floatTools" class="float0831">
-  <div class="floatL"> <a title="关闭在线客服" class="btnCtn" id="aFloatTools_Hide" style="display: block;" onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);">收缩</a> <a title="查看在线客服" class="btnOpen" id="aFloatTools_Show" style="display: none;" onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">展开</a> </div>
+  <div class="floatL"> 
+    <a title="关闭在线客服" 
+      class="btnCtn"  
+      id="aFloatTools_Hide" 
+      style="display: block;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);"
+    >收缩</a> 
+    <a title="查看在线客服" 
+      class="btnOpen" 
+      id="aFloatTools_Show" 
+      style="display: none;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">
+    展开</a> 
+  </div>
   <div id="divFloatToolsView" class="floatR">
     <div class="tp"></div>
     <div class="cn">
@@ -534,5 +547,10 @@ $(".layer2 li").hover
       </ul>
     </div>
   </div>
-</div> -->
+</div>
+<script>
+  $(document).ready(()=>{
+    document.getElementById("aFloatTools_Hide").click();
+  })
+</script>
 <!-----foot end------->

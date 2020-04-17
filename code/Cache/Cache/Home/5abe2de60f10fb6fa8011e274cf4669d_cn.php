@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo ($seo_title); ?>-<?php echo ($site_name); ?></title> 
 <meta name="keywords" content="<?php if($seo_keywords=='') : echo ($seo_title); else : echo ($seo_keywords); endif;?>" />
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui"> -->
 <meta name="description" content="<?php echo ($seo_description); ?>" />
 <meta name="baidu-site-verification" content="57egBW5jZG" />
 <link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/model_1.css" />
-<link rel="stylesheet" type="text/css" href="/static/css/main_1.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/main_1.css?v1.0.1" />
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/animate.min.css">
 <link rel="stylesheet" href="/static/iconfont/iconfont.css">
-<link rel="stylesheet" href="/static/css/yh/main.css">
-<link rel="stylesheet" href="/static/css/header.css?v1.0.1">
+<link rel="stylesheet" href="/static/css/yh/main.css?v1.0.2">
+<link rel="stylesheet" href="/static/css/header.css?v1.0.2">
 <link rel="stylesheet" href="/static/layui/css/layui.css">
 <link rel="stylesheet" href="/static/css/footer.css?v1.0.0">
 <script src="/static/layui/layui.js"></script>
@@ -377,6 +377,9 @@
     padding-bottom: 15px;
     margin-bottom: 20px;
   }
+  .about_us {
+    margin: 0 auto;
+  }
   .news_center .news_div_item .newsMore:hover{
     background-color: #000;
   }
@@ -384,6 +387,7 @@
     padding: 10px 20px;
     position: absolute;
     bottom: 10px;
+    right: 30px;
     border-radius: 5px;
     transition: all 0.3s linear;
     background-color: #b7b7b7;
@@ -1030,52 +1034,6 @@
     },interval);
   }
 </script>
-<!--
-<div class="nei4">
-  <div class="container">
-    <div class="nei2tit"> 新闻中心 </div>
-    <div class="nei4tit">
-      <p style="text-align: center;"><img src="/static/picture/1506308104769709_1.png" title="1506308104769709.png" alt="newstit.png"/></p>
-    </div>
-    <ul class="news_listN4 clearfix">
-	
-	<?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where("catid in (86,87,88) and lang=1 AND status=1 ")->order("updatetime desc,id desc")->limit("4")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><li class="clearfix"> <a href="<?php echo ($r["url"]); ?>" class="fl newsImg"><img src="<?php if($r['thumb']) echo $r['thumb']; else echo '/static/picture/nopic.jpg'; ?>" width="150" height="150"/></a>
-        <div class="fl"> <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"> <?php echo (substr($r["title"],0,36)); ?> </a> <span> <?php echo (todate($r["createtime"],'Y-m-d')); ?></span> <a href="<?php echo ($r["url"]); ?>" class="newsMore"> </a> </div>
-      </li><?php endforeach; endif;?>  
-	  
-    </ul>
-    <div class="nei2tit"> 关于我们 </div>
-    <div class="nei4Con clearfix">
-      <div class="nei4left fl">
-        <p><img src="/static/picture/1567477031543944_1.jpg" title="智能电气" alt="智能电气" width="522" height="298" style="width: 522px; height: 298px;" border="0" vspace="0"/></p>
-      </div>
-      <div class="fr guanyu">
-        <p style="line-height: 2em; text-indent: 2em;"><span style="vertical-align:middle;font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; line-height: 1.75em; text-indent: 2em; font-size: 20px; color: rgb(0, 0, 0);">TOSEE&nbsp; 特西德</span><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 1.75em; text-indent: 2em;">&nbsp; &nbsp; &nbsp; &nbsp;<a href="/about/contact.html" target="_self"><img src="/static/picture/1506309706171438_1.png" title="1506309706171438.png" alt="a.png"/></a>&nbsp;</span></p>
-        <p style="line-height: 2em;">&nbsp;<span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp; &nbsp; &nbsp; &nbsp;深圳市特西智能电气有限公司是一家专注于物联网智慧安全用电，集产品研发、设计、制造、智慧安全用电管理系统云平台建设、销售为一体的高新技术企业。</span></p>
-        <p style="line-height: 2em;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp; &nbsp; &nbsp; &nbsp;公司基于物联网时代的到来，国家智能电网的发展和节能减排需要，五年磨一剑，研发了国内首款符合国家3C标准、集智慧安全、遥控大数据为一体的机械双金+电子双重保护智慧断路器，并通过了国家3C认证，欧盟的CE认证、深圳市计量质量检测院等认证、国家公安部检测中心智慧电气安全预警系统认证等。而且取得了发明专利、实用新型专利、软件著作权、国家知识产权管理体系等60多项专利和证书。并为用户承保了1000万的产品责任险。</span></p>
-        <p style="line-height: 2em;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp; &nbsp; &nbsp; &nbsp;特西智能是深圳市电气安全物联网协会的发起人之一，且公司有与多个高等院校开展产学研究合作，通过优势互补，达到互利共赢，校企双方联合建立“产、学、研”合作平台，如：与贵阳理工学院共建国内首个“电力大数据实验室”和“电力跨界应用实验室”。</span></p>
-        <p style="line-height: 2em;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">&nbsp; &nbsp; &nbsp; &nbsp;特西电气安全用电系列产品广泛应用于住宅、写字楼、校园、学校、银行、医院、油站、酒店等多个领域，从而达到用电安全与管理的智能化。</span></p>
-        <p><span style="font-size: 14px;"></span><br/>
-        </p>
-      </div>
-    </div>
-    <div class="clearfix" style="margin-top:20px;">
-      <div class="fl bigshu">
-        <p><strong><span style="color: rgb(0, 0, 0); font-size: 20px;">智控、安全、大数据</span></strong></p>
-        <p><span style="font-size: 12px; color: rgb(0, 0, 0);">远程控制，9大安全防护，提供用电侧能耗数据监测分析</span></p>
-      </div>
-      <div class="fr jianrong">
-        <p><span style="font-size: 20px;"><strong><span style="color: rgb(0, 0, 0);">简单、开放、兼容</span></strong></span></p>
-        <p><span style="font-size: 12px; color: rgb(0, 0, 0);">开放的标准化平台，扩充整合容易，系统与未来多数科技产品相容</span></p>
-      </div>
-    </div>
-    <div class="f_link"> 
-	
-	 <?php  $_result=M("Link")->field("*")->where(" status = 1  and lang=1")->order("listorder desc,id desc")->limit("100")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><a href='<?php echo ($r["siteurl"]); ?>' target='_blank' rel="nofollow" ><?php echo ($r["name"]); ?></a><?php endforeach; endif;?>
-	   
-	   </div>
-  </div>
-</div> -->
 
  
  
@@ -1106,15 +1064,15 @@
       </div>
     </div>
   </div>
-  <!-- <div class="foot2">
+  <div class="foot2">
     <div class="footer">
       <div class="clearboth"></div>
-      <div class="copyright">
-        <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue="粤ICP备15032763号">粤ICP备15032763号</a></p>
+      <div class="copyright" id="footer_beian">
+        <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue="粤ICP备20025221号">粤ICP备20025221号</a></p>
       </div>
       
     </div>
-  </div> -->
+  </div>
 </div>
 <!--底部JS加载区域-->
 <script type="text/javascript" src="/static/js/common_1.js"></script>
@@ -1127,9 +1085,22 @@
 
 
 <!--在线客服-->
-<!-- <link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
+<link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
 <div id="floatTools" class="float0831">
-  <div class="floatL"> <a title="关闭在线客服" class="btnCtn" id="aFloatTools_Hide" style="display: block;" onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);">收缩</a> <a title="查看在线客服" class="btnOpen" id="aFloatTools_Show" style="display: none;" onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">展开</a> </div>
+  <div class="floatL"> 
+    <a title="关闭在线客服" 
+      class="btnCtn"  
+      id="aFloatTools_Hide" 
+      style="display: block;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);"
+    >收缩</a> 
+    <a title="查看在线客服" 
+      class="btnOpen" 
+      id="aFloatTools_Show" 
+      style="display: none;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">
+    展开</a> 
+  </div>
   <div id="divFloatToolsView" class="floatR">
     <div class="tp"></div>
     <div class="cn">
@@ -1153,5 +1124,15 @@
       </ul>
     </div>
   </div>
-</div> -->
+</div>
+<script>
+  (function(){
+    // if(window)
+    console.log(window.location.href)
+    $("#footer_beian")
+    $(document).ready(()=>{
+      document.getElementById("aFloatTools_Hide").click();
+    })
+  })()
+</script>
 <!-----foot end------->
