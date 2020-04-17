@@ -53,6 +53,18 @@
     vertical-align: middle;
     height: 100%;
 }
+#footer_beian a:hover{
+    text-decoration: underline;
+}
+#footer_beian a{
+    color: #fff;
+}
+#footer_beian{
+    text-align: center;
+    background-color: #3a3939;
+    padding: 5px 0; 
+    color: #fff;
+}
 /* 小 */
 @media screen and (max-width: 767px) {
     .footer_div .foot_content .foot_item{

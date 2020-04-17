@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/static/css/yh/main.css?v1.0.2">
 <link rel="stylesheet" href="/static/css/header.css?v1.0.2">
 <link rel="stylesheet" href="/static/layui/css/layui.css">
-<link rel="stylesheet" href="/static/css/footer.css?v1.0.0">
+<link rel="stylesheet" href="/static/css/footer.css?v1.0.1">
 <script src="/static/layui/layui.js"></script>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
@@ -485,14 +485,8 @@ $(function(){
       </div>
     </div>
   </div>
-  <div class="foot2">
-    <div class="footer">
-      <div class="clearboth"></div>
-      <div class="copyright" id="footer_beian">
-        <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue=""></a></p>
-      </div>
-      
-    </div>
+  <div class="copyright" id="footer_beian">
+    <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue=""></a></p>
   </div>
 </div>
 <!--底部JS加载区域-->

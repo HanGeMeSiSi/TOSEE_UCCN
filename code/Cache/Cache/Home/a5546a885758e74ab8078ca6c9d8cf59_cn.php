@@ -4,18 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo ($seo_title); ?>-<?php echo ($site_name); ?></title> 
 <meta name="keywords" content="<?php if($seo_keywords=='') : echo ($seo_title); else : echo ($seo_keywords); endif;?>" />
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui"> -->
 <meta name="description" content="<?php echo ($seo_description); ?>" />
 <meta name="baidu-site-verification" content="57egBW5jZG" />
 <link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/model_1.css" />
-<link rel="stylesheet" type="text/css" href="/static/css/main_1.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/main_1.css?v1.0.1" />
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/animate.min.css">
 <link rel="stylesheet" href="/static/iconfont/iconfont.css">
-<link rel="stylesheet" href="/static/css/yh/main.css">
-<link rel="stylesheet" href="/static/css/header.css?v1.0.0">
+<link rel="stylesheet" href="/static/css/yh/main.css?v1.0.3">
+<link rel="stylesheet" href="/static/css/header.css?v1.0.2">
 <link rel="stylesheet" href="/static/layui/css/layui.css">
+<link rel="stylesheet" href="/static/css/footer.css?v1.0.1">
 <script src="/static/layui/layui.js"></script>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
@@ -476,38 +477,37 @@ $(function(){
 
  
  
-<div class="foot">
-  <div class="footer clearfix">
-    <div class="fl footOne">
-      <p><img src="/static/picture/1543485466481995_1.png" title="1543485466481995.png" alt="LOGO.png" width="196" height="74" style="width: 196px; height: 74px;"/></p>
-      <div class="lianxi">
-        <p>深圳市宝安区沙井街道后亭学子围工业区C栋2楼</p>
-        <p>全国统一服务热线 : 4008897913</p>
-        <p>E-mail : 3310073861@qq.com</p>
-        <p>Q Q：3310073861</p>
+<div class="footer_div">
+  <div class="foot_content">
+    <div class="foot_item">
+      <div style="width:85%">
+        <p><img src="/static/picture/1543485466481995_1.png" title="1543485466481995.png" alt="LOGO.png" width="196" height="74" style="width: 196px; height: 74px;"/></p>
+        <div class="lianxi">
+          <p class="mt1">深圳市宝安区沙井街道后亭学子围工业区C栋2楼</p>
+          <p class="mt1">全国统一服务热线 : 4008897913</p>
+          <p class="mt1">E-mail : 3310073861@qq.com</p>
+          <p class="mt1">Q Q：3310073861</p>
+        </div>
       </div>
     </div>
-    <div class="fl footTwo">
-      <p><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 24px;"><strong>新闻中心</strong></span></p>
-      <ul class="footnei">
-	  	<?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1 ")->order("updatetime desc,id desc")->limit("4")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><li><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></li><?php endforeach; endif;?>
-      </ul>
+    <div class="foot_item">
+      <div>
+        <p><span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 24px;"><strong>新闻中心</strong></span></p>
+        <ul class="footnei">
+        <?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1 ")->order("updatetime desc,id desc")->limit("4")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><li><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo ($r["title"]); ?></a></li><?php endforeach; endif;?>
+        </ul>
+      </div>
     </div>
-    <div class="fr erwei">
-      <p><img src="/static/picture/1543485366826110_1.jpg" title="特西电气" alt="特西电气" width="219" height="220" style="width: 219px; height: 220px;" vspace="0"/></p>
+    <div class="foot_item">
+      <div>
+        <p><img src="/static/picture/1543485366826110_1.jpg" title="特西电气" alt="特西电气" width="219" height="220" style="width: 219px; height: 220px;" vspace="0"/></p>
+      </div>
     </div>
   </div>
-</div>
-<div class="foot2">
-  <div class="footer">
-    <div class="clearboth"></div>
-    <div class="copyright">
-      <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue="粤ICP备15032763号">粤ICP备15032763号</a></p>
-    </div>
-     
+  <div class="copyright" id="footer_beian">
+    <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue=""></a></p>
   </div>
 </div>
-  
 <!--底部JS加载区域-->
 <script type="text/javascript" src="/static/js/common_1.js"></script>
 <script type="text/javascript" src="/static/js/message_1.js"></script>
@@ -519,9 +519,22 @@ $(function(){
 
 
 <!--在线客服-->
-<!-- <link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
+<link rel="stylesheet" href="/static/kefu/qqkf.css" type="text/css"/>
 <div id="floatTools" class="float0831">
-  <div class="floatL"> <a title="关闭在线客服" class="btnCtn" id="aFloatTools_Hide" style="display: block;" onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);">收缩</a> <a title="查看在线客服" class="btnOpen" id="aFloatTools_Show" style="display: none;" onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">展开</a> </div>
+  <div class="floatL"> 
+    <a title="关闭在线客服" 
+      class="btnCtn"  
+      id="aFloatTools_Hide" 
+      style="display: block;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" href="javascript:void(0);"
+    >收缩</a> 
+    <a title="查看在线客服" 
+      class="btnOpen" 
+      id="aFloatTools_Show" 
+      style="display: none;" 
+      onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" href="javascript:void(0);">
+    展开</a> 
+  </div>
   <div id="divFloatToolsView" class="floatR">
     <div class="tp"></div>
     <div class="cn">
@@ -545,5 +558,24 @@ $(function(){
       </ul>
     </div>
   </div>
-</div> -->
+</div>
+<script>
+  (function(){
+    // if(window)
+    var footer_beian = $("#footer_beian");
+    var hostname = window.location.hostname;
+    if(hostname =="www.sztosee.cn"){
+      console.log(123)
+      var a_s = footer_beian.find("a");
+      $(a_s[a_s.length-1]).text("粤ICP备20025221号").attr("textvalue","粤ICP备20025221号");
+    }else if(hostname =="www.toseesz.com"){
+      var a_s = footer_beian.find("a");
+      // $(a_s[a_s.length-1]).text("粤ICP备20025221号").attr("textvalue","粤ICP备20025221号");
+    }
+    // console.log(window.location.hostname)
+    $(document).ready(()=>{
+      document.getElementById("aFloatTools_Hide").click();
+    })
+  })()
+</script>
 <!-----foot end------->

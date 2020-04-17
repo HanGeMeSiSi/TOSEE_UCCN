@@ -139,9 +139,9 @@ body{
 #container .left>.box>h3{
     padding: 0;
     text-align: center;
-    font-size: 22px;
-    background: none;
-    color: #000;
+    /* font-size: 22px; */
+    /* background: none; */
+    /* color: #000; */
 }
 #container .left{
     text-align: left;
@@ -166,7 +166,7 @@ body{
     #container .right{
         width: 100%;
     } 
-    /* #container .left::after{
+    #container .left::after{
         content: "";
         display: block;
         background-color: #f00;
@@ -178,7 +178,10 @@ body{
         top: 50%;
         border-radius: 0 10px 10px 0;
         cursor: pointer;
-    } */
+    }
+    #container .left:hover{
+        width: 30%;
+    }
     #container .left{
         /* position: relative; */
         width: 0;

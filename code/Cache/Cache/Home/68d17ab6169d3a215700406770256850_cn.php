@@ -4,19 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo ($seo_title); ?>-<?php echo ($site_name); ?></title> 
 <meta name="keywords" content="<?php if($seo_keywords=='') : echo ($seo_title); else : echo ($seo_keywords); endif;?>" />
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui">
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,minimal-ui"> -->
 <meta name="description" content="<?php echo ($seo_description); ?>" />
 <meta name="baidu-site-verification" content="57egBW5jZG" />
 <link rel="stylesheet" type="text/css" href="/static/css/base_1.css" />
 <link rel="stylesheet" type="text/css" href="/static/css/model_1.css" />
-<link rel="stylesheet" type="text/css" href="/static/css/main_1.css?v1.0.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/main_1.css?v1.0.1" />
 <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/animate.min.css">
 <link rel="stylesheet" href="/static/iconfont/iconfont.css">
-<link rel="stylesheet" href="/static/css/yh/main.css">
+<link rel="stylesheet" href="/static/css/yh/main.css?v1.0.3">
 <link rel="stylesheet" href="/static/css/header.css?v1.0.2">
 <link rel="stylesheet" href="/static/layui/css/layui.css">
-<link rel="stylesheet" href="/static/css/footer.css?v1.0.0">
+<link rel="stylesheet" href="/static/css/footer.css?v1.0.1">
 <script src="/static/layui/layui.js"></script>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
@@ -539,15 +539,9 @@ $(function(){
       </div>
     </div>
   </div>
-  <!-- <div class="foot2">
-    <div class="footer">
-      <div class="clearboth"></div>
-      <div class="copyright">
-        <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue="粤ICP备15032763号">粤ICP备15032763号</a></p>
-      </div>
-      
-    </div>
-  </div> -->
+  <div class="copyright" id="footer_beian">
+    <p>Copyright ?http://<?php  echo $_SERVER['SERVER_NAME']; ?> 深圳市特西智能电气有限公司 All Right Reserved. &nbsp; &nbsp; 版权所有：<a href="http://<?php  echo $_SERVER['SERVER_NAME']; ?>/" target="_self">深圳市特西智能电气有限公司</a>&nbsp; &nbsp; 备案号：<a href="http://beian.miit.gov.cn" target="_self" textvalue=""></a></p>
+  </div>
 </div>
 <!--底部JS加载区域-->
 <script type="text/javascript" src="/static/js/common_1.js"></script>
@@ -601,8 +595,22 @@ $(function(){
   </div>
 </div>
 <script>
-  $(document).ready(()=>{
-    document.getElementById("aFloatTools_Hide").click();
-  })
+  (function(){
+    // if(window)
+    var footer_beian = $("#footer_beian");
+    var hostname = window.location.hostname;
+    if(hostname =="www.sztosee.cn"){
+      console.log(123)
+      var a_s = footer_beian.find("a");
+      $(a_s[a_s.length-1]).text("粤ICP备20025221号").attr("textvalue","粤ICP备20025221号");
+    }else if(hostname =="www.toseesz.com"){
+      var a_s = footer_beian.find("a");
+      // $(a_s[a_s.length-1]).text("粤ICP备20025221号").attr("textvalue","粤ICP备20025221号");
+    }
+    // console.log(window.location.hostname)
+    $(document).ready(()=>{
+      document.getElementById("aFloatTools_Hide").click();
+    })
+  })()
 </script>
 <!-----foot end------->
